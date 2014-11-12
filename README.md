@@ -16,6 +16,7 @@ I plan to do an in person demo in my Section after Thursday's lecture in front o
 ### Additional Information:
 + Coded to HTML5 standards and uses the <http://validator.w3.org/> service to check it.
 + No Login is required, however you can create your own account, and then login and customize
++ JavaScript must be enabled on the browser
 
 ### Plugins and Outside Code used Credits:
 + Used the Dojo Toolkit Framework from <http://dojotoolkit.org/download/> and code hosted on https://ajax.googleapis.com
