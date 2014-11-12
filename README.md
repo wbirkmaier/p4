@@ -5,9 +5,9 @@ Wil Birkmaier
 <http://p4.awkupi.me>
 
 ### Description:
-This project is the culmination of all the subject matter I have learned thus far in Dynamic Web Applications. I will:
+This project is the culmination of all the subject matter I have learned thus far in Dynamic Web Applications. The project will:
 + Use PHP/Laravel.
-+ Usesa database with at least 2 tables. This count does not include a users table, but does include pivot tables.
++ Use a database with at least 2 tables. This count does not include a users table, but does include pivot tables.
 + Demonstrates all 4 CRUD interactions (user signup/login does not count towards this).
 
 ### Demo Information:
