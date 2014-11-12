@@ -7,4 +7,9 @@ class MainController extends BaseController {
 		return View::make('index');
 	}
 
+	public function showOops()
+	{
+		return View::make('oops');
+	}
+
 }
