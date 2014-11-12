@@ -14,4 +14,7 @@
 Route::get('/', 'MainController@showIndex');
 
 /*Default catch all view for wrong routes*/
-App::missing(function($exception), 'MainController@showOops');
+App::missing(function($exception)
+{
+        return View::make('oops');
+});
