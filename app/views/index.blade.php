@@ -1,72 +1,7 @@
-<!DOCTYPE html>
-
-	<!--	Dynamic Web Applications Fall 2014  					-->
-	<!--    Project Number 4		    					-->
-	<!--    Wil Birkmaier			    					-->
-	<!--    Final Project using what has been learned in class so far		-->
-
-<html>
-
-<head>
-	<title>Project 4 - RSS News Dashboard</title>
-
-	<meta charset="utf-8">
-	
-	<!--	Load Code for Dojo Toolkit	-->
-
-	<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/dojo/1.10.2/dijit/themes/claro/claro.css"/>
-
-        <style type="text/css">
-            @import "http://ajax.googleapis.com/ajax/libs/dojo/1.10.2/dojox/widget/Portlet/Portlet.css";
-            @import "http://ajax.googleapis.com/ajax/libs/dojo/1.10.2/dojox/layout/resources/GridContainer.css";
-            @import "http://ajax.googleapis.com/ajax/libs/dojo/1.10.2/dojox/widget/Calendar/Calendar.css";
-            .dndDropIndicator { border: 2px dashed #99BBE8; cursor:default; margin-bottom:5px;
-        </style>
-
-        <script src="http://ajax.googleapis.com/ajax/libs/dojo/1.10.2/dojo/dojo.js" djConfig="parseOnLoad: true"></script>
-        <script type="text/javascript">
-            dojo.require("dijit.dijit");
-            dojo.require("dojox.widget.Portlet");
-            dojo.require("dojox.widget.FeedPortlet");
-            dojo.require("dojox.layout.GridContainer");
-            dojo.require("dojox.widget.Calendar");
-        </script>
-
-	<!--	Code to refresh the main page for latest feeds.					-->
-	<!--	The browser goes through each block and uses the most recent one it can		-->
-	<!--	Code derived from http://grizzlyweb.com/webmaster/javascripts/refresh.asp	-->
-
-	<script language="JavaScript">
-		var sURL = unescape(window.location.pathname);
-		function doLoad()
-		{
-		    // the timeout value should be the same as in the "refresh" meta-tag
-		    setTimeout( "refresh()", 1800*1000 );
-		}
-
-		function refresh()
-		{
-		    window.location.href = sURL;
-		}
-	</script>
-
-	<script language="JavaScript1.1">
-		function refresh()
-		{		
-		    window.location.replace( sURL );
-		}
-	</script>
-
-	<script language="JavaScript1.2">
-		function refresh()
-		{
-		    window.location.reload( false );
-		}
-	</script>
-
-</head>
+@extends('_master')
 
 
+@section('content')
 <!-- Use the "onload" event to start the refresh process. -->
 <body onload="doLoad()">
 
@@ -253,5 +188,4 @@
 
     </body>
 
-</html>
-
+@stop
