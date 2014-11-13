@@ -5,7 +5,7 @@
 <!-- Use the "onload" event to start the refresh process. -->
 <body onload="doLoad()">
 
-	<body class=" claro ">
+	<body class="claro">
         	<div dojoType="dojox.layout.GridContainer" id="gc1" acceptTypes="dojox.widget.Portlet, dojox.widget.FeedPortlet,dojox.widget.ExpandableFeedPortlet" hasResizableColumns="false" opacity="0.3" nbZones="4" allowAutoScroll="true" withHandles="true" handleClasses="dijitTitlePaneTitle" region="center" minChildWidth="200" minColWidth="40">
 
             	<div dojoType="dojox.widget.Portlet" title="Portlets Refreshed Every 30 Minutes">
