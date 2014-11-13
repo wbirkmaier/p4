@@ -1,5 +1,12 @@
 @extends('_master')
 
+@section('active')
+
+	<li class="active"><a href="/">Home</a></li>
+        <li><a href="/register">Register</a></li>
+        <li><a href="/login">Login</a></li>
+
+@stop
 
 @section('content')
 <!-- Use the "onload" event to start the refresh process. -->
