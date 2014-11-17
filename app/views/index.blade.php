@@ -10,6 +10,8 @@
 
 @section('content')
 
+		<marquee width="600" scrollamount="10" scrolldelay="150"><?php echo '<a href="http://www.propublica.org/article/somebodys-already-using-verizons-id-to-track-users?hn">Somebody is already using verizons id to track users</a>';?></marquee>
+
         	<div dojoType="dojox.layout.GridContainer" id="gc1" acceptTypes="dojox.widget.Portlet, dojox.widget.FeedPortlet,dojox.widget.ExpandableFeedPortlet" hasResizableColumns="false" opacity="0.3" nbZones="3" allowAutoScroll="true" withHandles="true" handleClasses="dijitTitlePaneTitle" region="center" minChildWidth="50" minColWidth="20" isAutoOrganized="true">
 
             	<div dojoType="dojox.widget.Portlet" title="Portlets Refreshed Every 30 Minutes" column="1">
