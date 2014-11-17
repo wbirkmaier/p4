@@ -10,7 +10,7 @@
 
 @section('content')
 
-        	<div dojoType="dojox.layout.GridContainer" id="gc1" acceptTypes="dojox.widget.Portlet, dojox.widget.FeedPortlet,dojox.widget.ExpandableFeedPortlet" hasResizableColumns="false" opacity="0.3" nbZones="1" allowAutoScroll="true" withHandles="true" handleClasses="dijitTitlePaneTitle" region="center" minChildWidth="50" minColWidth="20" isAutoOrganized="false">
+        	<div dojoType="dojox.layout.GridContainer" id="gc1" acceptTypes="dojox.widget.Portlet, dojox.widget.FeedPortlet,dojox.widget.ExpandableFeedPortlet" hasResizableColumns="false" opacity="0.3" nbZones="3" allowAutoScroll="true" withHandles="true" handleClasses="dijitTitlePaneTitle" region="center" minChildWidth="50" minColWidth="20" isAutoOrganized="true">
 
             	<div dojoType="dojox.widget.Portlet" title="Portlets Refreshed Every 30 Minutes" column="1">
                 	<div dojoType="dojox.widget.PortletSettings"></div>
@@ -176,7 +176,7 @@
                 </div>
            </div>
 
-	   <div dojoType="dojox.widget.FeedPortlet" title="Todays News" id="ycFeed"
+	   <div dojoType="dojox.widget.FeedPortlet" title="Todays News" id="ycFeed column="1""
                 url="https://news.ycombinator.com/rss" maxResults="200">
                 <div dojoType="dojox.widget.PortletFeedSettings">
                 </div>

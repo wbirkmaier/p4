@@ -26,7 +26,7 @@
 	<![endif]-->
 	
 	<!-- Load Code for Dojo Toolkit -->
-        <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/dojo/1.10.2/dijit/themes/claro/claro.css"/>
+        <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/dojo/1.10.2/dijit/themes/nihilo/nihilo.css"/>
 
         <style type="text/css">
             @import "http://ajax.googleapis.com/ajax/libs/dojo/1.10.2/dojox/widget/Portlet/Portlet.css";
@@ -64,7 +64,7 @@
 
 </head>
 
-<body class="claro" onload="doLoad()">
+<body class="nihilo" onload="doLoad()">
 	<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 		<div class="container">
 	        	<div class="navbar-header">

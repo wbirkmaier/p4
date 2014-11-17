@@ -13,6 +13,10 @@
 
 Route::get('/', 'MainController@showIndex');
 
+Route::get('/register', 'MainController@showRegister');
+
+Route::get('/login', 'MainController@showLogin');
+
 /*Default catch all view for wrong routes*/
 App::missing(function($exception)
 {
