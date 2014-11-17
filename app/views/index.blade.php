@@ -9,13 +9,10 @@
 @stop
 
 @section('content')
-<!-- Use the "onload" event to start the refresh process. -->
-<body onload="doLoad()">
 
-	<body class="claro">
-        	<div dojoType="dojox.layout.GridContainer" id="gc1" acceptTypes="dojox.widget.Portlet, dojox.widget.FeedPortlet,dojox.widget.ExpandableFeedPortlet" hasResizableColumns="false" opacity="0.3" nbZones="4" allowAutoScroll="true" withHandles="true" handleClasses="dijitTitlePaneTitle" region="center" minChildWidth="200" minColWidth="40">
+        	<div dojoType="dojox.layout.GridContainer" id="gc1" acceptTypes="dojox.widget.Portlet, dojox.widget.FeedPortlet,dojox.widget.ExpandableFeedPortlet" hasResizableColumns="false" opacity="0.3" nbZones="1" allowAutoScroll="true" withHandles="true" handleClasses="dijitTitlePaneTitle" region="center" minChildWidth="50" minColWidth="20" isAutoOrganized="false">
 
-            	<div dojoType="dojox.widget.Portlet" title="Portlets Refreshed Every 30 Minutes">
+            	<div dojoType="dojox.widget.Portlet" title="Portlets Refreshed Every 30 Minutes" column="1">
                 	<div dojoType="dojox.widget.PortletSettings"></div>
 		<div>
 			Page Last Refreshed on: <script language="JavaScript"> document.write('<b>' + (new Date).toLocaleString() + '</b>'); </script>
@@ -28,7 +25,7 @@
                 </div>
             </div>
 
-	    <div dojoType="dojox.widget.Portlet" title="Calendar Portlet">
+	    <div dojoType="dojox.widget.Portlet" title="Calendar Portlet" column="1">
                 <div dojoType="dojox.widget.PortletSettings">
                     Put whatever settings you like in here
                 </div>
@@ -47,9 +44,6 @@
 	   <div dojoType="dojox.widget.FeedPortlet" title="Todays News" id="slashDotNews"
                 url="http://rss.slashdot.org/Slashdot/slashdot" maxResults="10">
                 <div dojoType="dojox.widget.PortletFeedSettings">
-                </div>
-                <div>
-                        <!---->
                 </div>
            </div>
 
@@ -192,7 +186,5 @@
            </div>
 
         </div>
-
-    </body>
 
 @stop

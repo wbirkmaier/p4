@@ -48,29 +48,15 @@
         <!--    The browser goes through each block and uses the most recent one it can         -->
         <!--    Code derived from http://grizzlyweb.com/webmaster/javascripts/refresh.asp       -->
 
-        <script language="JavaScript">
+        <script type="text/javascript">
                 var sURL = unescape(window.location.pathname);
                 function doLoad()
                 {
-                    // the timeout value should be the same as in the "refresh" meta-tag
+                    // setTimeout value is set to 30 minute refresh intervals
                     setTimeout( "refresh()", 1800*1000 );
                 }
 
-                function refresh()
-                {
-                    window.location.href = sURL;
-                }
-        </script>
-
-        <script language="JavaScript1.1">
-                function refresh()
-                {               
-                    window.location.replace( sURL );
-                }
-        </script>
-
-        <script language="JavaScript1.2">
-                function refresh()
+		function refresh()
                 {
                     window.location.reload( false );
                 }
@@ -78,7 +64,7 @@
 
 </head>
 
-<body>
+<body class="claro" onload="doLoad()">
 	<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 		<div class="container">
 	        	<div class="navbar-header">
