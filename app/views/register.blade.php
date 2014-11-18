@@ -10,7 +10,7 @@
 
 @section('content')
 
-        <form action="{{ url('user') }}" method="post">
+        <form action="{{ url('user/register') }}" method="post">
                 <p><label for="username">Username:</label></p>
                 <p><input type="text" name="username" placeholder="Username" /></p>
                 <p><label for="email">Email:</label></p>

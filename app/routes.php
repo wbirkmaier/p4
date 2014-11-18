@@ -14,12 +14,12 @@
 Route::get('/', 'MainController@showIndex');
 
 Route::get('/user/register', 'UserController@getRegister');
-Route::post('/user/register', 'UserController@postRegister');
+Route::post('/user/register', ['before' => 'csrf', 'uses' => 'UserController@postRegister']);
 
 Route::get('/user/login', 'UserController@getLogin');
-Route::post('/user/login', 'UserController@postLogin');
+Route::post('/user/login', ['before' => 'csrf', 'uses' => 'UserController@postLogin']);
 
-Route::get('/user/logout', 'UserController@getLogout');
+Route::get('/user/logout', ['before' => 'auth', 'uses' => 'UserController@getLogout']);
 
 Route::get('/debug', 'DebugController@getDebug');
 
