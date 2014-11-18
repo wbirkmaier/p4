@@ -19,6 +19,8 @@ Route::post('/user/register', 'UserController@postRegister');
 Route::get('/user/login', 'UserController@getLogin');
 Route::post('/user/login', 'UserController@postLogin');
 
+Route::get('/user/logout', 'UserController@getLogout');
+
 Route::get('/debug', 'DebugController@getDebug');
 
 /*Default catch all view for wrong routes*/

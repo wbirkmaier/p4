@@ -28,5 +28,11 @@ class UserController extends BaseController {
                 return View::make('login');
 	}
 
+	public function getLogout()
+        {
+                return View::make('index');
+        }
+
+
 }
 
