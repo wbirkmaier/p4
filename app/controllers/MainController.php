@@ -7,15 +7,4 @@ class MainController extends BaseController {
 		return View::make('index');
 	}
 
-	public function showRegister()
-        {
-                return View::make('register');
-        }
-
-	public function showLogin()
-        {
-                return View::make('login');
-        }
-
-
 }

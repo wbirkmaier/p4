@@ -15,4 +15,10 @@ class BaseController extends Controller {
 		}
 	}
 
+	public function __construct()
+	{
+		$this->beforeFilter('csrf', array('on' => array('post', 'delete', 'put')));
+		$this->beforeFilter('ajax', array('on' => array('delete', 'put')));
+	}
+
 }

@@ -13,9 +13,9 @@
 
 Route::get('/', 'MainController@showIndex');
 
-Route::get('/register', 'MainController@showRegister');
+Route::get('/register', 'UserController@showRegister');
 
-Route::get('/login', 'MainController@showLogin');
+Route::get('/login', 'UserController@showLogin');
 
 /*Default catch all view for wrong routes*/
 App::missing(function($exception)
