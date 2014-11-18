@@ -13,9 +13,11 @@
 
 Route::get('/', 'MainController@showIndex');
 
-Route::get('/register', 'UserController@showRegister');
+Route::get('/user/register', 'UserController@getRegister');
+Route::post('/user/register', 'UserController@postRegister');
 
-Route::get('/login', 'UserController@showLogin');
+Route::get('/user/login', 'UserController@getLogin');
+Route::post('/user/login', 'UserController@postLogin');
 
 /*Default catch all view for wrong routes*/
 App::missing(function($exception)
