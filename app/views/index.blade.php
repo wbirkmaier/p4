@@ -12,7 +12,7 @@
 
         	<div data-dojo-type="dojox.layout.GridContainer" id="gc1" acceptTypes="dojox.widget.Portlet, dojox.widget.FeedPortlet,dojox.widget.ExpandableFeedPortlet" hasResizableColumns="false" opacity="0.3" nbZones="3" allowAutoScroll="true" withHandles="true" handleClasses="dijitTitlePaneTitle" region="center" minChildWidth="50" minColWidth="20" isAutoOrganized="true">
 
-            	<div data-dojo-type="dojox.widget.Portlet" title="Portlets Refreshed Every 30 Minutes" column="1">
+            	<div data-dojo-type="dojox.widget.Portlet" data-dojo-props='title:"Portlets Refreshed Every 30 Minutes", column:"1"'>
                 	<div data-dojo-type="dojox.widget.PortletSettings"></div>
 		<div>
 			Page Last Refreshed on: <script> document.write('<b>' + (new Date).toLocaleString() + '</b>'); </script>
