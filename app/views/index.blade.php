@@ -15,7 +15,7 @@
             	<div data-dojo-type="dojox.widget.Portlet" title="Portlets Refreshed Every 30 Minutes" column="1">
                 	<div data-dojo-type="dojox.widget.PortletSettings"></div>
 		<div>
-			Page Last Refreshed on: <script document.write('<b>' + (new Date).toLocaleString() + '</b>'); </script>
+			Page Last Refreshed on: <script> document.write('<b>' + (new Date).toLocaleString() + '</b>'); </script>
 		    <br>
 		    <br>
 		    Click the settings icon in the title bar to enter a different feed to load. Hovering over a news item shows a summary of it in a tooltip.
