@@ -27,7 +27,7 @@
                 </div>
             </div>
 
-	    <div data-dojo-type="dojox.widget.Portlet" title="Calendar Portlet" column="1">
+	    <div data-dojo-type="dojox.widget.Portlet" data-dojo-props='title:"Calendar Portlet", column:"1"'>
                 <div data-dojo-type="dojox.widget.PortletSettings">
                     Put whatever settings you like in here
                 </div>
