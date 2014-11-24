@@ -15,7 +15,7 @@
             	<div data-dojo-type="dojox.widget.Portlet" title="Portlets Refreshed Every 30 Minutes" column="1">
                 	<div data-dojo-type="dojox.widget.PortletSettings"></div>
 		<div>
-			Page Last Refreshed on: <script language="JavaScript"> document.write('<b>' + (new Date).toLocaleString() + '</b>'); </script>
+			Page Last Refreshed on: <script document.write('<b>' + (new Date).toLocaleString() + '</b>'); </script>
 		    <br>
 		    <br>
 		    Click the settings icon in the title bar to enter a different feed to load. Hovering over a news item shows a summary of it in a tooltip.
@@ -137,11 +137,8 @@
                 </div>
            </div>
 
-
-
-
 	   <div data-dojo-type="dojox.widget.FeedPortlet" data-dojo-props='id:"techRepublicFeed",
-                url:"http://www.techrepublic.com/search?t=1,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22&o=1&mode=rss&tag=mantle_skin;content", maxResults:"10"'>
+                url:"http://www.techrepublic.com/rssfeeds/articles/latest/", maxResults:"10"'>
                 <div data-dojo-type="dojox.widget.PortletFeedSettings">
                 </div>
                 <div>
