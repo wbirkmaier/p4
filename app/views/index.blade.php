@@ -10,20 +10,20 @@
 
 @section('content')
 
-        	<div data-dojo-type="dojox.layout.GridContainer" id="gc1" acceptTypes="dojox.widget.Portlet, dojox.widget.FeedPortlet,dojox.widget.ExpandableFeedPortlet" hasResizableColumns="false" opacity="0.3" nbZones="3" allowAutoScroll="true" withHandles="true" handleClasses="dijitTitlePaneTitle" region="center" minChildWidth="50" minColWidth="20" isAutoOrganized="true">
+        	<div data-dojo-type="dojox.layout.GridContainer" data-dojo-props='id:"gc1", handleClasses:"dijitTitlePaneTitle", withHandles:"true", nbZones:"3", hasResizableColumns:"false", opacity:"0.3", allowAutoScroll:"true", region:"center", minChildWidth:"20", minColWidth:"20", isAutoOrganized:"true"'> 
 
-            	<div data-dojo-type="dojox.widget.Portlet" data-dojo-props='title:"Portlets Refreshed Every 30 Minutes", column:"1"'>
+        <div data-dojo-type="dojox.widget.Portlet" data-dojo-props='title:"Portlets Refreshed Every 30 Minutes", column:"1"'>
                 	<div data-dojo-type="dojox.widget.PortletSettings"></div>
-		<div>
-			Page Last Refreshed on: <script> document.write('<b>' + (new Date).toLocaleString() + '</b>'); </script>
-		    <br>
-		    <br>
-		    Click the settings icon in the title bar to enter a different feed to load. Hovering over a news item shows a summary of it in a tooltip.
-		    <br>
-		    <br>
-		    Would you like to customize this view?  <b><a href="/user/login">Login</a></b> or <b><a href="/user/register">Register</a></b> an account!
-                </div>
-            </div>
+		      <div>
+			     Page Last Refreshed on: <script> document.write('<b>' + (new Date).toLocaleString() + '</b>'); </script>
+		         <br>
+		         <br>
+		         Click the settings icon in the title bar to enter a different feed to load. Hovering over a news item shows a summary of it in a tooltip.
+		         <br>
+		         <br>
+		         Would you like to customize this view?  <b><a href="/user/login">Login</a></b> or <b><a href="/user/register">Register</a></b> an account!
+              </div>
+        </div>
 
 	    <div data-dojo-type="dojox.widget.Portlet" data-dojo-props='title:"Calendar Portlet", column:"1"'>
                 <div data-dojo-type="dojox.widget.PortletSettings">
