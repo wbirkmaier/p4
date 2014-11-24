@@ -35,7 +35,7 @@
             .dndDropIndicator { border: 2px dashed #99BBE8; cursor:default; margin-bottom:5px;
         </style>
 
-        <script src="http://ajax.googleapis.com/ajax/libs/dojo/1.10.2/dojo/dojo.js" djConfig="parseOnLoad: true"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/dojo/1.10.2/dojo/dojo.js" data-dojo-config="parseOnLoad: true"></script>
         <script type="text/javascript">
             dojo.require("dijit.dijit");
             dojo.require("dojox.widget.Portlet");
