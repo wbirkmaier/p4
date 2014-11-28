@@ -11,15 +11,15 @@
 |
 */
 
-Route::get('/', 'MainController@showIndex');
+Route::get('/', 'IndexController@showIndex');
 
-Route::get('/user/register', 'UserController@getRegister');
-Route::post('/user/register', ['before' => 'csrf', 'uses' => 'UserController@postRegister']);
+Route::get('/register', 'UserController@getRegister');
+Route::post('/register', ['before' => 'csrf', 'uses' => 'UserController@postRegister']);
 
-Route::get('/user/login', 'UserController@getLogin');
-Route::post('/user/login', ['before' => 'csrf', 'uses' => 'UserController@postLogin']);
+Route::get('/login', 'UserController@getLogin');
+Route::post('/login', ['before' => 'csrf', 'uses' => 'UserController@postLogin']);
 
-Route::get('/user/logout', ['before' => 'auth', 'uses' => 'UserController@getLogout']);
+Route::get('/logout', ['before' => 'auth', 'uses' => 'UserController@getLogout']);
 
 Route::get('/debug', 'DebugController@getDebug');
 

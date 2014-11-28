@@ -3,14 +3,14 @@
 @section('active')
 
 	<li><a href="/">Home</a></li>
-        <li class="active"><a href="/user/register">Register</a></li>
-        <li><a href="/user/login">Login</a></li>
+        <li class="active"><a href="/register">Register</a></li>
+        <li><a href="/login">Login</a></li>
 
 @stop
 
 @section('content')
 
-        <form action="{{ url('user/register') }}" method="post">
+        <form action="{{ url('register') }}" method="post">
                 <p><label for="username">Username:</label></p>
                 <p><input type="text" name="username" placeholder="Username" /></p>
                 <p><label for="email">Email:</label></p>

@@ -1,6 +1,6 @@
 <?php
 
-class MainController extends BaseController {
+class IndexController extends BaseController {
 
 	public function __construct()
 	{

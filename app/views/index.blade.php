@@ -3,8 +3,8 @@
 @section('active')
 
 	<li class="active"><a href="/">Home</a></li>
-        <li><a href="/user/register">Register</a></li>
-        <li><a href="/user/login">Login</a></li>
+        <li><a href="/register">Register</a></li>
+        <li><a href="/login">Login</a></li>
 
 @stop
 
