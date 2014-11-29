@@ -18,6 +18,8 @@
         <p><label for="password">Password:</label></p>
         <p><input type="password" name="password" placeholder="Password" /></p>
         <p><input type="submit" value="Register" class="btn btn-primary"/></p>
+         <?= Form::token() ?>
+        <br>
     </form>
 
 @stop
