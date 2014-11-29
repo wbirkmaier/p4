@@ -2,13 +2,50 @@
 
 @section('active')
 
-	<li class="active"><a href="/">Home</a></li>
-        <li><a href="/register">Register</a></li>
-        <li><a href="/login">Login</a></li>
+	<li class="active"><a href="{{ action('IndexController@showIndex') }}">Home</a></li>
+    <li><a href="{{ action('IndexController@getLogin') }}">Login</a></li>
+    <li><a href="{{ action('IndexController@getRegister') }}">Register</a></li>
 
 @stop
 
 @section('content')
+
+//Test Code//<br>
+
+<a href="{{ action('IndexController@createFeed') }}" class="btn btn-primary">Create Feed</a>
+
+@if ($feeds->isEmpty())
+    <p>No Feed Records Found</p>
+@else
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>URL</th>
+                <th>Max Results</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+      
+@foreach($feeds as $feed)
+        <tr>
+            <td>{{ $feed->name }}</td>
+            <td>{{ $feed->url }}</td>
+            <td>{{ $feed->maxresults }}</td>
+            <td>
+                <a href="{{ action('IndexController@changeFeed', $feed->id) }}"class="btn btn-primary">Modify</a>
+                <a href="{{ action('IndexController@deleteFeed', $feed->id) }}" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+@endforeach
+
+        </tbody>
+    </table>
+
+@endif
+
+//End Test Code//
 
         	<div data-dojo-type="dojox.layout.GridContainer" data-dojo-props='id:"gc1", handleClasses:"dijitTitlePaneTitle", withHandles:"true", nbZones:"3", hasResizableColumns:"false", opacity:"0.3", allowAutoScroll:"true", region:"center", minChildWidth:"20", minColWidth:"20", isAutoOrganized:"true"'> 
 
@@ -21,7 +58,9 @@
 		         Click the settings icon in the title bar to enter a different feed to load. Hovering over a news item shows a summary of it in a tooltip.
 		         <br>
 		         <br>
-		         Would you like to customize this view?  <b><a href="/login">Login</a></b> or <b><a href="/register">Register</a></b> an account!
+		         Would you like to customize this view?<br>
+                <br>
+                <b><a href="{{ action('IndexController@getLogin') }}" class="btn btn-primary">Login</a></b> or <b><a href="{{ action('IndexController@getRegister') }}" class="btn btn-primary">Register</a></b>
               </div>
         </div>
 

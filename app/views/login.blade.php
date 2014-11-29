@@ -2,20 +2,20 @@
 
 @section('active')
 
-	<li><a href="/">Home</a></li>
-        <li><a href="/register">Register</a></li>
-        <li class="active"><a href="/login">Login</a></li>
+	<li><a href="{{ action('IndexController@showIndex') }}">Home</a></li>
+    <li class="active"><a href="{{ action('IndexController@getLogin') }}">Login</a></li>
+    <li><a href="{{ action('IndexController@getRegister') }}">Register</a></li>
 
 @stop
 
 @section('content')
 
-        <form action="{{ url('login') }}" method="post">
-                <p><label for="email">Email:</label></p>
-                <p><input type="text" name="email" placeholder="Email" /></p>
-                <p><label for="password">Password:</label></p>
-                <p><input type="password" name="password" placeholder="Password" /></p>
-                <p><input type="submit" value="Login" /></p>
-        </form>
+    <form method="post" action="{{ url('login') }}" >
+        <p><label class="control-label col-sm-2" for="email">Email:</label></p>
+        <p><input class="form-control" type="text" name="email" placeholder="Email"/></p>
+        <p><label class="control-label col-sm-2" for="password">Password:</label></p>
+        <p><input class="form-control" type="password" name="password" placeholder="Password" /></p>
+        <p><input type="submit" value="Login" class="btn btn-primary"/></p>
+    </form>
 
 @stop
