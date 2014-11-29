@@ -18,6 +18,8 @@
         <input type="hidden" name="feed" value="{{ $feed->id }}"/>
         <input class="btn btn-danger" type="submit" value="Yes"/>
         <a href="{{ action('IndexController@showIndex') }}" class="btn btn-default">Return to Dashboard</a>
+         <?= Form::token() ?>
+        <br>
     </form>
 
 @stop

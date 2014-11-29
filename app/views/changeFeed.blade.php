@@ -25,6 +25,8 @@
         <br>
         <input class="btn btn-primary" type="submit" value="Save"/>
         <a href="{{ action('IndexController@showIndex') }}" class="btn btn-link">Cancel</a>
+         <?= Form::token() ?>
+        <br>
     </form>
 
 @stop
