@@ -21,7 +21,7 @@
 		         Click the settings icon in the title bar to enter a different feed to load. Hovering over a news item shows a summary of it in a tooltip.
 		         <br>
 		         <br>
-		         Would you like to customize this view?  <b><a href="/user/login">Login</a></b> or <b><a href="/user/register">Register</a></b> an account!
+		         Would you like to customize this view?  <b><a href="/login">Login</a></b> or <b><a href="/register">Register</a></b> an account!
               </div>
         </div>
 

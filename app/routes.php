@@ -13,13 +13,13 @@
 
 Route::get('/', 'IndexController@showIndex');
 
-Route::get('/register', 'UserController@getRegister');
-Route::post('/register', ['before' => 'csrf', 'uses' => 'UserController@postRegister']);
+Route::get('/register', 'IndexController@getRegister');
+Route::post('/register', ['before' => 'csrf', 'uses' => 'IndexController@postRegister']);
 
-Route::get('/login', 'UserController@getLogin');
-Route::post('/login', ['before' => 'csrf', 'uses' => 'UserController@postLogin']);
+Route::get('/login', 'IndexController@getLogin');
+Route::post('/login', ['before' => 'csrf', 'uses' => 'IndexController@postLogin']);
 
-Route::get('/logout', ['before' => 'auth', 'uses' => 'UserController@getLogout']);
+Route::get('/logout', ['before' => 'auth', 'uses' => 'IndexController@getLogout']);
 
 Route::get('/debug', 'DebugController@getDebug');
 
