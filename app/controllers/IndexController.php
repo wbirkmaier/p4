@@ -78,8 +78,6 @@ class IndexController extends BaseController {
             $user->given = Input::get('given');
             $user->sur = Input::get('sur');
             $user->email = Input::get('email');
-
-            
         
             /*Get post data from submitted page to verify password*/
             $postVerify = Input::get('verifyPass');
