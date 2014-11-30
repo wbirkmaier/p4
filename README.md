@@ -18,9 +18,9 @@ I plan to do an in person demo in my Section after Thursday's lecture in front o
 + No Login is required, however you can create your own account, and then login and customize
 + JavaScript must be enabled on the browser
 + Uses local database P4
-++ php artisan migrate:make create_feeds; php artisan migrate
-++ php artisan session:table; php artisan migrate
-++ php artisan migrate:make create_users; php artisan migrate
+* php artisan migrate:make create_feeds; php artisan migrate
+* php artisan session:table; php artisan migrate
+* php artisan migrate:make create_users; php artisan migrate
 
 ### Plugins and Outside Code used Credits:
 + Used the Dojo Toolkit Framework from <http://dojotoolkit.org/download/> and code hosted on https://ajax.googleapis.com
