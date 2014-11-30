@@ -16,6 +16,8 @@
         <p><label class="control-label col-sm-2" for="password">Password:</label></p>
         <p><input class="form-control" type="password" name="password" placeholder="Password" /></p>
         <p><input type="submit" value="Login" class="btn btn-primary"/></p>
+         <?= Form::token() ?>
+        <br>
     </form>
 
 @stop

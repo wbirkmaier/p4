@@ -72,7 +72,31 @@ class IndexController extends BaseController {
 
 	public function postRegister()
         {
-            return View::make('register');
+            $user = new User;
+            $user->username = Input::get('username');
+            $user->password = Hash::make(Input::get('password'));
+            $user->email = Input::get('email');
+            $user->save();
+            
+            return Response::make('Account Created Succesfully.');
+            
+        
+            /*Get post data from submitted page to verify password
+            $postVerify = Input::get('verifyPass');
+
+            if (Hash::check( $postVerify, $user->password ))
+                {
+                    $user->save();
+                    return Response::make('Account Created Succesfully.');
+                }
+        
+            else
+                {
+                    return Redirect::to('/register')
+                        ->with('flash_message', 'Paswords do not match, please fix')
+                        ->withInput();
+                }
+                */
         }
 
     /*Section to Log user in*/
