@@ -11,7 +11,8 @@ class DebugController extends BaseController {
 
 	public function getDebug()
 	{
-		return View::make('debug');
+        $feeds = Feed::all();
+        return View::make('debug', compact('feeds'));
 	}
 
 }

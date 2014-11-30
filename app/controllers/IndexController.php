@@ -113,7 +113,8 @@ class IndexController extends BaseController {
     /*Section to log user out*/
 	public function getLogout()
         {
-            return View::make('indexFeed');
+            Auth::logout();
+            return Response::make('You are logged out');
         }
 
 }

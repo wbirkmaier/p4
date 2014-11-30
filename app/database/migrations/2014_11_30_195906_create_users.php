@@ -20,6 +20,7 @@ class CreateUsers extends Migration {
                 $table->string('sur', 128);
                 $table->string('password', 60);
                 $table->string('email', 254)->unique();
+                $table->rememberToken();
                 $table->timestamps();
             });
 	}

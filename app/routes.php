@@ -37,10 +37,10 @@ Route::get('/login', 'IndexController@getLogin');
 Route::post('/login', ['before' => 'csrf', 'uses' => 'IndexController@postLogin']);
 
 /*Route to Logout a User*/
-Route::get('/logout', ['before' => 'auth', 'uses' => 'IndexController@getLogout']);
+Route::get('/logout', 'IndexController@getLogout');
 
 /*Debug Route*/
-Route::get('/debug', 'DebugController@getDebug');
+Route::get('/debug', ['before' => 'auth.basic', 'uses' => 'DebugController@getDebug']);
 
 /*Default catch all view for wrong routes*/
 App::missing(function($exception)
