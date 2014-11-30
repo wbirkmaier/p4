@@ -75,19 +75,19 @@ class IndexController extends BaseController {
             $user = new User;
             $user->username = Input::get('username');
             $user->password = Hash::make(Input::get('password'));
+            $user->given = Input::get('given');
+            $user->sur = Input::get('sur');
             $user->email = Input::get('email');
-            $user->save();
-            
-            return Response::make('Account Created Succesfully.');
+
             
         
-            /*Get post data from submitted page to verify password
+            /*Get post data from submitted page to verify password*/
             $postVerify = Input::get('verifyPass');
 
             if (Hash::check( $postVerify, $user->password ))
                 {
                     $user->save();
-                    return Response::make('Account Created Succesfully.');
+                    return Redirect::to('/')->with('flash_message', 'Account Created Succesfully.');
                 }
         
             else
@@ -96,7 +96,7 @@ class IndexController extends BaseController {
                         ->with('flash_message', 'Paswords do not match, please fix')
                         ->withInput();
                 }
-                */
+                
         }
 
     /*Section to Log user in*/

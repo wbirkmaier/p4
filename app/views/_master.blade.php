@@ -66,9 +66,12 @@
 
 <body class="nihilo" onload="doLoad()">
     
-    <!-- Added for Flash Messages -->
+    <!-- Added for  'flash-message' with Bootstrap Stylings -->
     @if(Session::get('flash_message'))
-        <div class='flash-message'>{{ Session::get('flash_message') }}</div>
+        <div class="alert" style="border: 2px solid #a1a1a1; background-color: #e6e7e9">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            {{ Session::get('flash_message') }}
+        </div>
     @endif
     
 	<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
