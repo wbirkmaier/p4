@@ -65,6 +65,12 @@
 </head>
 
 <body class="nihilo" onload="doLoad()">
+    
+    <!-- Added for Flash Messages -->
+    @if(Session::get('flash_message'))
+        <div class='flash-message'>{{ Session::get('flash_message') }}</div>
+    @endif
+    
 	<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 		<div class="container">
 	        	<div class="navbar-header">
