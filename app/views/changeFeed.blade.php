@@ -3,8 +3,9 @@
 @section('active')
 
 	/* Generate dynamic menu base on URL and Login Status */
-	<li class="active"><a href="{{ action('IndexController@showIndex') }}">Home</a></li>
+	<li><a href="{{ action('IndexController@showIndex') }}">Home</a></li>
     @if (Auth::check())
+        <li class="active"><a href="{{ action('IndexController@customizeFeed') }}">Customize</a></li>
         <li><a href="{{ action('IndexController@getLogout') }}">Logout</a></li>
     @else
         <li><a href="{{ action('IndexController@getLogin') }}">Login</a></li>
@@ -29,7 +30,7 @@
         <input class="form-control" type="int" name="maxresults" value="{{ $feed->maxresults }}"/>
         <br>
         <input class="btn btn-primary" type="submit" value="Save"/>
-        <a href="{{ action('IndexController@showIndex') }}" class="btn btn-link">Cancel</a>
+        <a href="{{ action('IndexController@customizeFeed') }}" class="btn btn-danger">Cancel</a>
          <?= Form::token() ?>
         <br>
     </form>

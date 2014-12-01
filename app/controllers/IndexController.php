@@ -16,6 +16,13 @@ class IndexController extends BaseController {
         }
     
     /*Section to create a new feed in database*/
+    public function customizeFeed()
+        {
+            $feeds = Feed::all();
+            return View::make('customizeFeed', compact('feeds'));
+        }
+    
+    /*Section to create a new feed in database*/
     public function createFeed()
         {
             return View::make('createFeed');
@@ -29,7 +36,7 @@ class IndexController extends BaseController {
             $feed->maxresults = Input::get('maxresults');
             $feed->save();  
         
-            return Redirect::action('IndexController@showIndex');
+            return Redirect::action('IndexController@customizeFeed');
         } 
     
     /*Section to change feed in database*/
@@ -46,7 +53,7 @@ class IndexController extends BaseController {
             $feed->maxresults = Input::get('maxresults');
             $feed->save();
 
-            return Redirect::action('IndexController@showIndex');
+            return Redirect::action('IndexController@customizeFeed');
         }
     
     /*Section to delete feed from database*/
@@ -61,7 +68,7 @@ class IndexController extends BaseController {
             $feed = Feed::findOrFail($id);
             $feed->delete();
             
-            return Redirect::action('IndexController@showIndex');
+            return Redirect::action('IndexController@customizeFeed');
         }
     
     /*Section to Register New User*/
