@@ -2,7 +2,7 @@
 
 @section('active')
 
-    /* Generate dynamic menu base on URL and Login Status */
+    <!- Generate dynamic menu base on URL and Login Status ->
 	<li><a href="{{ action('IndexController@showIndex') }}">Home</a></li>
     @if (Auth::check())
         <li class="active"><a href="{{ action('IndexController@customizeFeed') }}">Customize</a></li>

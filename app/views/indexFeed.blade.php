@@ -1,7 +1,8 @@
 @extends('_master')
 
 @section('active')
-    /* Generate dynamic menu base on URL and Login Status */
+
+    <!- Generate dynamic menu base on URL and Login Status ->
 	<li class="active"><a href="{{ action('IndexController@showIndex') }}">Home</a></li>
     @if (Auth::check())
         <li><a href="{{ action('IndexController@customizeFeed') }}">Customize</a></li>
