@@ -15,44 +15,7 @@
 
 @section('content')
 
-//Test Code//<br>
-
-<a href="{{ action('IndexController@createFeed') }}" class="btn btn-primary">Create Feed</a>
-
-@if ($feeds->isEmpty())
-    <p>No Feed Records Found</p>
-@else
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>URL</th>
-                <th>Max Results</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-      
-@foreach($feeds as $feed)
-        <tr>
-            <td>{{ $feed->name }}</td>
-            <td>{{ $feed->url }}</td>
-            <td>{{ $feed->maxresults }}</td>
-            <td>
-                <a href="{{ action('IndexController@changeFeed', $feed->id) }}"class="btn btn-primary">Modify</a>
-                <a href="{{ action('IndexController@deleteFeed', $feed->id) }}" class="btn btn-danger">Delete</a>
-            </td>
-        </tr>
-@endforeach
-
-        </tbody>
-    </table>
-
-@endif
-
-//End Test Code//
-
-        	<div data-dojo-type="dojox.layout.GridContainer" data-dojo-props='id:"gc1", handleClasses:"dijitTitlePaneTitle", withHandles:"true", nbZones:"3", hasResizableColumns:"false", opacity:"0.3", allowAutoScroll:"true", region:"center", minChildWidth:"20", minColWidth:"20", isAutoOrganized:"true"'> 
+        <div data-dojo-type="dojox.layout.GridContainer" data-dojo-props='id:"gc1", handleClasses:"dijitTitlePaneTitle", withHandles:"true", nbZones:"3", hasResizableColumns:"false", opacity:"0.3", allowAutoScroll:"true", region:"center", minChildWidth:"20", minColWidth:"20", isAutoOrganized:"true"'> 
 
         <div data-dojo-type="dojox.widget.Portlet" data-dojo-props='title:"Portlets Refreshed Every 30 Minutes", column:"1"'>
                 	<div data-dojo-type="dojox.widget.PortletSettings"></div>
