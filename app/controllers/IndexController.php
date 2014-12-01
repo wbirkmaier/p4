@@ -33,50 +33,104 @@ class IndexController extends BaseController {
     /*Section to create a new feed in database*/
     public function createFeed()
         {
-            return View::make('createFeed');
+            if (Auth::check())
+                {
+                    return View::make('createFeed');
+                }
+            else
+                {
+                    return Redirect::to('/login')->with('flash_message', 'Please Login.');
+                }
+
+            return Redirect::to('/login');
         }
     
     public function postCreateFeed()
         {
-            $feed = new Feed;
-            $feed->name = Input::get('name');
-            $feed->url = Input::get('url');
-            $feed->maxresults = Input::get('maxresults');
-            $feed->save();  
+            if (Auth::check())
+                {
+                    $feed = new Feed;
+                    $feed->name = Input::get('name');
+                    $feed->url = Input::get('url');
+                    $feed->maxresults = Input::get('maxresults');
+                    $feed->save();
         
-            return Redirect::action('IndexController@customizeFeed');
+                    return Redirect::action('IndexController@customizeFeed');
+                }
+            else
+                {
+                    return Redirect::to('/login')->with('flash_message', 'Please Login.');
+                }
+
+            return Redirect::to('/login');
         } 
     
     /*Section to change feed in database*/
     public function changeFeed(Feed $feed)
         {
-            return View::make('changeFeed', compact('feed'));
+            if (Auth::check())
+                {
+                    return View::make('changeFeed', compact('feed'));
+                }
+            else
+                {
+                    return Redirect::to('/login')->with('flash_message', 'Please Login.');
+                }
+
+            return Redirect::to('/login');
         }
     
     public function postChangeFeed()
         {
-            $feed = Feed::findOrFail(Input::get('id'));
-            $feed->name = Input::get('name');
-            $feed->url = Input::get('url');
-            $feed->maxresults = Input::get('maxresults');
-            $feed->save();
-
-            return Redirect::action('IndexController@customizeFeed');
+            if (Auth::check())
+                {
+                    $feed = Feed::findOrFail(Input::get('id'));
+                    $feed->name = Input::get('name');
+                    $feed->url = Input::get('url');
+                    $feed->maxresults = Input::get('maxresults');
+                    $feed->save();
+            
+                    return Redirect::action('IndexController@customizeFeed');
+                }
+            else
+                {
+                    return Redirect::to('/login')->with('flash_message', 'Please Login.');    
+                }
+            
+            return Redirect::to('/login');
         }
     
     /*Section to delete feed from database*/
     public function deleteFeed(Feed $feed)
         {
-            return View::make('deleteFeed', compact('feed'));
+            if (Auth::check())
+                {
+                    return View::make('deleteFeed', compact('feed'));
+                }
+            else
+                {
+                    return Redirect::to('/login')->with('flash_message', 'Please Login.');    
+                }
+            
+            return Redirect::to('/login');
         }
     
     public function postDeleteFeed()
         {
-            $id = Input::get('feed');
-            $feed = Feed::findOrFail($id);
-            $feed->delete();
+            if (Auth::check())
+                {
+                    $id = Input::get('feed');
+                    $feed = Feed::findOrFail($id);
+                    $feed->delete();
             
-            return Redirect::action('IndexController@customizeFeed');
+                    return Redirect::action('IndexController@customizeFeed');
+                }
+            else
+                {
+                    return Redirect::to('/login')->with('flash_message', 'Please Login.');    
+                }
+            
+            return Redirect::to('/login');
         }
     
     /*Section to Register New User*/
