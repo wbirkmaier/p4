@@ -18,8 +18,17 @@ class IndexController extends BaseController {
     /*Section to create a new feed in database*/
     public function customizeFeed()
         {
-            $feeds = Feed::all();
-            return View::make('customizeFeed', compact('feeds'));
+            if (Auth::check())
+                {
+                    $feeds = Feed::all();
+                    return View::make('customizeFeed', compact('feeds'));
+                }
+            else
+                {
+                    return Redirect::to('/login')->with('flash_message', 'Please Login.');
+                }
+
+            return Redirect::to('/login');
         }
     
     /*Section to create a new feed in database*/
