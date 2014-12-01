@@ -2,9 +2,15 @@
 
 @section('active')
 
+     /* Generate dynamic menu base on URL and Login Status */
 	<li><a href="{{ action('IndexController@showIndex') }}">Home</a></li>
-    <li><a href="{{ action('IndexController@getLogin') }}">Login</a></li>
-    <li class="active"><a href="{{ action('IndexController@getRegister') }}">Register</a></li>
+    @if (Auth::check())
+        <li><a href="{{ action('IndexController@getLogout') }}">Logout</a></li>
+    @else
+        <li><a href="{{ action('IndexController@getLogin') }}">Login</a></li>
+        <li class="active"><a href="{{ action('IndexController@getRegister') }}">Register</a></li>
+    @endif
+	
 
 @stop
 

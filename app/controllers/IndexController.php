@@ -105,14 +105,23 @@ class IndexController extends BaseController {
 
     public function postLogin()
         {
-            return View::make('login');
+            $credentials = Input::only('email', 'password');
+
+            if (Auth::attempt($credentials, $remember = true)) {
+                return Redirect::intended('/')->with('flash_message', 'Welcome Back!');
+            }
+            else {
+                return Redirect::to('/login')->with('flash_message', 'Invalid Email or Password, Please Try Again');
+            }
+
+            return Redirect::to('/login');
         }
 
     /*Section to log user out*/
 	public function getLogout()
         {
             Auth::logout();
-            return Response::make('You are logged out');
+            return Redirect::to('/')->with('flash_message', 'You are logged out.');
         }
 
 }

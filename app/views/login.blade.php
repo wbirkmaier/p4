@@ -11,9 +11,9 @@
 @section('content')
 
     <form method="post" action="{{ url('login') }}" >
-        <p><label class="control-label col-sm-2" for="email">Email:</label></p>
+        <p><label for="email">Email:</label></p>
         <p><input class="form-control" type="text" name="email" placeholder="Email"/></p>
-        <p><label class="control-label col-sm-2" for="password">Password:</label></p>
+        <p><label for="password">Password:</label></p>
         <p><input class="form-control" type="password" name="password" placeholder="Password" /></p>
         <p><input type="submit" value="Login" class="btn btn-primary"/></p>
          <?= Form::token() ?>

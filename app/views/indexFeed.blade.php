@@ -1,10 +1,14 @@
 @extends('_master')
 
 @section('active')
-
+    /* Generate dynamic menu base on URL and Login Status */
 	<li class="active"><a href="{{ action('IndexController@showIndex') }}">Home</a></li>
-    <li><a href="{{ action('IndexController@getLogin') }}">Login</a></li>
-    <li><a href="{{ action('IndexController@getRegister') }}">Register</a></li>
+    @if (Auth::check())
+        <li><a href="{{ action('IndexController@getLogout') }}">Logout</a></li>
+    @else
+        <li><a href="{{ action('IndexController@getLogin') }}">Login</a></li>
+        <li><a href="{{ action('IndexController@getRegister') }}">Register</a></li>
+    @endif
 
 @stop
 
@@ -58,9 +62,15 @@
 		         Click the settings icon in the title bar to enter a different feed to load. Hovering over a news item shows a summary of it in a tooltip.
 		         <br>
 		         <br>
-		         Would you like to customize this view?<br>
-                <br>
-                <b><a href="{{ action('IndexController@getLogin') }}" class="btn btn-primary">Login</a></b> or <b><a href="{{ action('IndexController@getRegister') }}" class="btn btn-primary">Register</a></b>
+                    @if (Auth::check())
+                        <a href="{{ action('IndexController@getLogout') }}" class="btn btn-primary">Logout</a>
+                    @else
+                         Would you like to customize this view?<br>
+                        <br>
+                        <b>
+                        <a href="{{ action('IndexController@getLogin') }}" class="btn btn-primary">Login</a></b> or <b><a href="{{ action('IndexController@getRegister') }}" class="btn btn-primary">Register</a>
+                    @endif
+                </b>
               </div>
         </div>
 

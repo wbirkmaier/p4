@@ -29,7 +29,7 @@ Route::get('/delete/{feed}', 'IndexController@deleteFeed');
 Route::post('/delete', 'IndexController@postDeleteFeed');
 
 /*Route to Register a User*/
-Route::get('/register', 'IndexController@getRegister');
+Route::get('/register', ['before' => 'guest', 'uses' => 'IndexController@getRegister']);
 Route::post('/register', ['before' => 'csrf', 'uses' => 'IndexController@postRegister']);
 
 /*Route to Allow User to Login*/
