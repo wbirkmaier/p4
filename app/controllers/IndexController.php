@@ -14,7 +14,7 @@ class IndexController extends BaseController {
             return View::make('indexFeed');
         }
     
-    /*Section to create a new feed in database*/
+    /*Section to customoze feeds for main page*/
     public function customizeFeed()
         {
             if (Auth::check())
