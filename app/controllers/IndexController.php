@@ -134,6 +134,22 @@ class IndexController extends BaseController {
             $user->sur = Input::get('sur');
             $user->email = Input::get('email');
         
+            $rules = array(
+                'email' => 'required|email|unique:users,email',
+                'password' => 'required|min:3',
+                'username' => 'required|unique:users,username'
+            );
+        
+            $validator = Validator::make(Input::all(), $rules);
+        
+            if ($validator->fails()) 
+                {
+                    return Redirect::to('/register')
+                    ->with('flash_message', 'Please check your fields for the errors below')
+                    ->withInput()
+                    ->withErrors($validator);
+                }
+        
             /*Get post data from submitted page to verify password*/
             $postVerify = Input::get('verifyPass');
 

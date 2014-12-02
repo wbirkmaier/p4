@@ -16,6 +16,11 @@
 
 @section('content')
 
+@foreach ($errors->all() as $message)
+    <div class='error'>{{ $message }}</div>
+    <br>
+@endforeach
+
     <form action="{{ url('register') }}" method="post">
         <p><label for="username">Username:</label></p>
         <p><input type="text" name="username" placeholder="rdoe"/></p>
