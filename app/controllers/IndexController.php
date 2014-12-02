@@ -26,8 +26,6 @@ class IndexController extends BaseController {
                 {
                     return Redirect::to('/login')->with('flash_message', 'Please Login.');
                 }
-
-            return Redirect::to('/login');
         }
     
     /*Section to create a new feed in database*/
@@ -41,8 +39,6 @@ class IndexController extends BaseController {
                 {
                     return Redirect::to('/login')->with('flash_message', 'Please Login.');
                 }
-
-            return Redirect::to('/login');
         }
     
     public function postCreateFeed()
@@ -61,8 +57,6 @@ class IndexController extends BaseController {
                 {
                     return Redirect::to('/login')->with('flash_message', 'Please Login.');
                 }
-
-            return Redirect::to('/login');
         } 
     
     /*Section to change feed in database*/
@@ -76,8 +70,6 @@ class IndexController extends BaseController {
                 {
                     return Redirect::to('/login')->with('flash_message', 'Please Login.');
                 }
-
-            return Redirect::to('/login');
         }
     
     public function postChangeFeed()
@@ -96,8 +88,6 @@ class IndexController extends BaseController {
                 {
                     return Redirect::to('/login')->with('flash_message', 'Please Login.');    
                 }
-            
-            return Redirect::to('/login');
         }
     
     /*Section to delete feed from database*/
@@ -111,8 +101,6 @@ class IndexController extends BaseController {
                 {
                     return Redirect::to('/login')->with('flash_message', 'Please Login.');    
                 }
-            
-            return Redirect::to('/login');
         }
     
     public function postDeleteFeed()
@@ -129,8 +117,6 @@ class IndexController extends BaseController {
                 {
                     return Redirect::to('/login')->with('flash_message', 'Please Login.');    
                 }
-            
-            return Redirect::to('/login');
         }
     
     /*Section to Register New User*/
@@ -163,8 +149,7 @@ class IndexController extends BaseController {
                     return Redirect::to('/register')
                         ->with('flash_message', 'Paswords do not match, please fix')
                         ->withInput();
-                }
-                
+                }            
         }
 
     /*Section to Log user in*/
@@ -183,8 +168,6 @@ class IndexController extends BaseController {
             else {
                 return Redirect::to('/login')->with('flash_message', 'Invalid Email or Password, Please Try Again');
             }
-
-            return Redirect::to('/login');
         }
 
     /*Section to log user out*/
