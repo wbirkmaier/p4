@@ -154,7 +154,8 @@ class IndexController extends BaseController {
             if (Hash::check( $postVerify, $user->password ))
                 {
                     $user->save();
-                    return Redirect::to('/')->with('flash_message', 'Account Created Succesfully.');
+                    Auth::login($user);
+                    return Redirect::to('/')->with('flash_message', 'Account Created Succesfully. You are now logged in.');
                 }
         
             else
