@@ -67,10 +67,10 @@
 <body class="nihilo" onload="doLoad()">
     
     <!-- Added for  'flash-message' with Bootstrap Stylings -->
-    @if(Session::get('flash_message'))
+    @if(Session::get('flashBanner'))
         <div class="alert" style="border: 2px solid #a1a1a1; background-color: #e6e7e9">
             <button type="button" class="close" data-dismiss="alert">&times;</button>
-            {{ Session::get('flash_message') }}
+            {{ Session::get('flashBanner') }}
         </div>
     @endif
     

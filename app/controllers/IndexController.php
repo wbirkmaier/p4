@@ -24,7 +24,7 @@ class IndexController extends BaseController {
                 }
             else
                 {
-                    return Redirect::to('/login')->with('flash_message', 'Please Login.');
+                    return Redirect::to('/login')->with('flashBanner', 'Please Login.');
                 }
         }
     
@@ -37,7 +37,7 @@ class IndexController extends BaseController {
                 }
             else
                 {
-                    return Redirect::to('/login')->with('flash_message', 'Please Login.');
+                    return Redirect::to('/login')->with('flashBanner', 'Please Login.');
                 }
         }
     
@@ -55,7 +55,7 @@ class IndexController extends BaseController {
                 }
             else
                 {
-                    return Redirect::to('/login')->with('flash_message', 'Please Login.');
+                    return Redirect::to('/login')->with('flashBanner', 'Please Login.');
                 }
         } 
     
@@ -68,7 +68,7 @@ class IndexController extends BaseController {
                 }
             else
                 {
-                    return Redirect::to('/login')->with('flash_message', 'Please Login.');
+                    return Redirect::to('/login')->with('flashBanner', 'Please Login.');
                 }
         }
     
@@ -86,7 +86,7 @@ class IndexController extends BaseController {
                 }
             else
                 {
-                    return Redirect::to('/login')->with('flash_message', 'Please Login.');    
+                    return Redirect::to('/login')->with('flashBanner', 'Please Login.');    
                 }
         }
     
@@ -99,7 +99,7 @@ class IndexController extends BaseController {
                 }
             else
                 {
-                    return Redirect::to('/login')->with('flash_message', 'Please Login.');    
+                    return Redirect::to('/login')->with('flashBanner', 'Please Login.');    
                 }
         }
     
@@ -115,7 +115,7 @@ class IndexController extends BaseController {
                 }
             else
                 {
-                    return Redirect::to('/login')->with('flash_message', 'Please Login.');    
+                    return Redirect::to('/login')->with('flashBanner', 'Please Login.');    
                 }
         }
     
@@ -145,7 +145,7 @@ class IndexController extends BaseController {
             if ($validator->fails()) 
                 {
                     return Redirect::to('/register')
-                    ->with('flash_message', 'Please check your fields for the errors below')
+                    ->with('flashBanner', 'Please check your fields for the errors below')
                     ->withInput()
                     ->withErrors($validator);
                 }
@@ -157,13 +157,13 @@ class IndexController extends BaseController {
                 {
                     $user->save();
                     Auth::login($user);
-                    return Redirect::to('/')->with('flash_message', 'Account Created Succesfully. You are now logged in.');
+                    return Redirect::to('/')->with('flashBanner', 'Account Created Succesfully. You are now logged in.');
                 }
         
             else
                 {
                     return Redirect::to('/register')
-                        ->with('flash_message', 'Paswords do not match, please fix')
+                        ->with('flashBanner', 'Paswords do not match, please fix')
                         ->withInput();
                 }            
         }
@@ -179,10 +179,10 @@ class IndexController extends BaseController {
             $credentials = Input::only('email', 'password');
 
             if (Auth::attempt($credentials, $remember = true)) {
-                return Redirect::intended('/')->with('flash_message', 'Welcome Back!');
+                return Redirect::intended('/')->with('flashBanner', 'Welcome Back!');
             }
             else {
-                return Redirect::to('/login')->with('flash_message', 'Invalid Email or Password, Please Try Again');
+                return Redirect::to('/login')->with('flashBanner', 'Invalid Email or Password, Please Try Again');
             }
         }
 
@@ -190,7 +190,7 @@ class IndexController extends BaseController {
 	public function getLogout()
         {
             Auth::logout();
-            return Redirect::to('/')->with('flash_message', 'You are logged out.');
+            return Redirect::to('/')->with('flashBanner', 'You are logged out.');
         }
 
 }
