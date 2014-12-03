@@ -45,7 +45,6 @@
         </script>
 
         <!--    Code to refresh the main page for latest feeds.                                 -->
-        <!--    The browser goes through each block and uses the most recent one it can         -->
         <!--    Code derived from http://grizzlyweb.com/webmaster/javascripts/refresh.asp       -->
 
         <script type="text/javascript">
