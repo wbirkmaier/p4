@@ -1,10 +1,10 @@
 @extends('_master')
 
 @section('active')
-    
+
 	<li><a href="{{ action('IndexController@showIndex') }}">Home</a></li>
-    <li class="active"><a href="{{ action('IndexController@getLogin') }}">Login</a></li>
-    <li><a href="{{ action('IndexController@getRegister') }}">Register</a></li>
+	<li class="active"><a href="{{ action('IndexController@getLogin') }}">Login</a></li>
+	<li><a href="{{ action('IndexController@getRegister') }}">Register</a></li>
 
 @stop
 
