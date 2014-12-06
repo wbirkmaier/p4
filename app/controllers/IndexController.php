@@ -11,7 +11,18 @@ class IndexController extends BaseController {
     /*Landing page for P4*/
 	public function showIndex()
         {   
-            $feeds = Feed::all();
+            if (Auth::check())
+                {
+                    $user = Auth::id();
+                    $feeds = User::find($user)->feeds;
+                }
+            else
+                {
+                    /* $feeds = Feed::all();*/
+                    $user = '1';
+                    $feeds = User::find($user)->feeds;
+                }
+        
             return View::make('indexFeed', compact('feeds'));
         }
     
