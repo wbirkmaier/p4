@@ -7,8 +7,14 @@ Wil Birkmaier
 ### Description:
 This project is the culmination of all the subject matter I have learned thus far in Dynamic Web Applications. The project will:
 + Use PHP/Laravel.
-+ Use a database with at least 2 tables. This count does not include a users table, but does include pivot tables.
++ Use a database with at least 2 tables (users, feeds and feed_user) . This count does not include a users table, but does include pivot tables.
 + Demonstrates all 4 CRUD interactions (user signup/login does not count towards this).
+
+### What the application does
+This application is a simple RSS news feed agrigator:
++ Default page shows pre-selected RSS feeds
++ Creating an account allows you to add your own RSS feeds ex. <http://feeds.feedburner.com/pbs/wgbh/frontline/programs-feed></http://feeds.feedburner.com/pbs/wgbh/frontline/programs-feed>
++ You are only allowed to create and edit your own feeds
 
 ### Demo Information:
 I plan to do an in person demo in my Section after Thursday's lecture in front of my group and TA Dan.
