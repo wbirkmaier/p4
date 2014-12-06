@@ -117,6 +117,13 @@ class P4Seeder extends Seeder
             $feed->url = 'https://news.ycombinator.com/rss';
             $feed->maxresults = '10';
             $feed->save();
+            
+            $feed = new Feed;
+            $feed->name = 'PBSFeed';
+            $feed->url = 'http://feeds.feedburner.com/pbs/wgbh/frontline/programs-feed';
+            $feed->maxresults = '10';
+            $feed->save();
+            
 
         }   
     }

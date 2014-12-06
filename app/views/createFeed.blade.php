@@ -23,7 +23,7 @@
         <input class="form-control" type="text" name="name" placeholder="CNN News"/>
         <br>
         <label for="url">RSS Feed URL</label>
-        <input class="form-control" type="text" name="url" placeholder="cnn.com/rss.xml"/>
+        <input class="form-control" type="text" name="url" placeholder="http://cnn.com/rss.xml"/>
         <br>
         <label for="maxresults">Number of Articles to Return</label>
         <input class="form-control" type="int" name="maxresults" placeholder="10"/>
