@@ -31,7 +31,8 @@ class IndexController extends BaseController {
         {
             if (Auth::check())
                 {
-                    $feeds = Feed::all();
+                    $user = Auth::id();
+                    $feeds = User::find($user)->feeds;
                     return View::make('customizeFeed', compact('feeds'));
                 }
             else

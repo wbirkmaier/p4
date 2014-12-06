@@ -16,13 +16,15 @@
 
 @section('content')
 
-<h1>Here you can customize your RSS Feed list.</h1>
+<h3>Customize your RSS Feed list.</h3>
 <br>
 <a href="{{ action('IndexController@createFeed') }}" class="btn btn-primary">Create Feed</a>
 <br>
 <br>
+
 @if ($feeds->isEmpty())
     <p>No Feed Records Found</p>
+
 @else
     <table class="table table-striped">
         <thead>

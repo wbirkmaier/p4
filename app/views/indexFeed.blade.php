@@ -16,6 +16,15 @@
 
 @section('content')
 
+@if ($feeds->isEmpty())
+    <h3>No Feed Records Found</h3>
+    <br>
+    <a href="{{ action('IndexController@createFeed') }}" class="btn btn-primary">Create Feed</a>
+    <br>
+    <br>
+
+@else
+
         <div data-dojo-type="dojox.layout.GridContainer" data-dojo-props='id:"gc1", handleClasses:"dijitTitlePaneTitle", withHandles:"true", nbZones:"3", hasResizableColumns:"false", opacity:"0.3", allowAutoScroll:"true", region:"center", minChildWidth:"20", minColWidth:"20", isAutoOrganized:"true"'> 
 
         <div data-dojo-type="dojox.widget.Portlet" data-dojo-props='title:"Portlets Refreshed Every 30 Minutes", column:"1"'>
@@ -60,9 +69,9 @@
                     <div data-dojo-type="dojox.widget.PortletFeedSettings"></div>
             </div>
 @endforeach
-            
 	   
 
         </div>
+@endif
 
 @stop

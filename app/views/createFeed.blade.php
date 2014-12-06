@@ -16,7 +16,7 @@
 
 @section('content')
 
-    <h1>Enter an RSS Feed URI to store in your account</h1>
+    <h3>Enter an RSS Feed URI to store in your account</h3>
 
     <form method="post" role="form" action="{{ action('IndexController@postCreateFeed') }}">
         <label for="title">Feed Name</label>
