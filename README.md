@@ -31,3 +31,4 @@ I plan to do an in person demo in my Section after Thursday's lecture in front o
 + Used jQuery 1.11.1 from <https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js>.
 + Used and derived code from auto page refresh <http://grizzlyweb.com/webmaster/javascripts/refresh.asp>
 + Used barryvdh / laravel-debugbar for development environment <https://github.com/barryvdh/laravel-debugbar>
++ Lots of help from Code Bright by Dayle Rees, especially the chapter "Build and App"
