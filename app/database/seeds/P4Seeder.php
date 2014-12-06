@@ -1,4 +1,5 @@
 <?php
+//Called in app/database/seeds/DatabaseSeeder.php
 class P4Seeder extends Seeder
     {
     
@@ -6,9 +7,12 @@ class P4Seeder extends Seeder
         {
         
             DB::statement('SET FOREIGN_KEY_CHECKS=0'); 
+            
+            //Truncate all tables
             DB::statement('TRUNCATE feeds');
             DB::statement('TRUNCATE users');
         
+            //Add a test user
             $user = new User;
             $user->username = 'tgmail';
             $user->given = 'Test';
@@ -17,6 +21,7 @@ class P4Seeder extends Seeder
             $user->email = 'test@gmail.com';
             $user->save();
         
+            //Add URLs for RSS Feeds to be displayed on default home page
             $feed = new Feed;
             $feed->name = 'slashDotNews';
             $feed->url = 'http://rss.slashdot.org/Slashdot/slashdot';
