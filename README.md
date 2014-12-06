@@ -12,17 +12,17 @@ This project is the culmination of all the subject matter I have learned thus fa
 
 ### What the application does:
 This application is a simple RSS news feed aggregator:
-+ Default page shows pre-selected RSS feeds
-+ Creating an account allows you to add your own RSS feeds ex. <http://feeds.feedburner.com/pbs/wgbh/frontline/programs-feed></http://feeds.feedburner.com/pbs/wgbh/frontline/programs-feed>
-+ You are only allowed to create and edit your own feeds
++ Default page shows pre-selected RSS feeds.
++ Creating an account allows you to add your own RSS feeds ex. <http://feeds.feedburner.com/pbs/wgbh/frontline/programs-feed></http://feeds.feedburner.com/pbs/wgbh/frontline/programs-feed>.
++ You are only allowed to create and edit your own feeds.
 
 ### Demo Information:
 I plan to do an in person demo in my Section after Thursday's lecture in front of my group and TA Dan.
 
 ### Additional Information:
 + Coded to HTML5 standards and uses the <http://validator.w3.org/> service to check it.
-+ No Login is required, however you can create your own account, and then login and customize
-+ JavaScript must be enabled on the browser
++ No Login is required, however you can create your own account, and then login and customize.
++ JavaScript must be enabled on the browser.
 + Uses local database P4, and seeds.
  + php artisan migrate:make create_feeds; php artisan migrate
  + php artisan session:table; php artisan migrate
@@ -39,4 +39,5 @@ I plan to do an in person demo in my Section after Thursday's lecture in front o
 + Used jQuery 1.11.1 from <https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js>.
 + Used and derived code from auto page refresh <http://grizzlyweb.com/webmaster/javascripts/refresh.asp>
 + Used barryvdh / laravel-debugbar for development environment <https://github.com/barryvdh/laravel-debugbar>
-+ Lots of help from Code Bright by Dayle Rees, especially the chapter "Build and App"
++ Lots of help from Code Bright by Dayle Rees, especially the chapter "Build an App".
++ Super smart person Susan Buck and my TAs Dan and Nick.
