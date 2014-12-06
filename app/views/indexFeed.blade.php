@@ -16,6 +16,24 @@
 
 @section('content')
 
+        //TestCode//
+        <!-- <br>
+        <div class='form-group'>
+			{{ Form::label('feed_id', 'Feed') }}
+			{{ Form::select('feed_id', $feeds); }}
+		</div>
+        -->
+
+@foreach($feeds as $feed)
+        {{ $feed->name }}
+        {{ $feed->url }}
+        {{ $feed->maxresults }}
+        <br>
+@endforeach
+
+        //EndTestCode//
+        <br>
+
         <div data-dojo-type="dojox.layout.GridContainer" data-dojo-props='id:"gc1", handleClasses:"dijitTitlePaneTitle", withHandles:"true", nbZones:"3", hasResizableColumns:"false", opacity:"0.3", allowAutoScroll:"true", region:"center", minChildWidth:"20", minColWidth:"20", isAutoOrganized:"true"'> 
 
         <div data-dojo-type="dojox.widget.Portlet" data-dojo-props='title:"Portlets Refreshed Every 30 Minutes", column:"1"'>
