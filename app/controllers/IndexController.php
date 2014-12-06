@@ -46,11 +46,13 @@ class IndexController extends BaseController {
         {
             if (Auth::check())
                 {
+                    $user = Auth::id();
                     $feed = new Feed;
                     $feed->name = Input::get('name');
                     $feed->url = Input::get('url');
                     $feed->maxresults = Input::get('maxresults');
                     $feed->save();
+                    $feed->users()->attach($user); 
         
                     return Redirect::action('IndexController@customizeFeed');
                 }
