@@ -2,6 +2,12 @@
 
 class Feed extends Eloquent
     {   
+        public function users()
+            {
+                return $this->belongsToMany('User');
+            }
+    
+    
         public static function getIndexFeed()
             {
 		      $feeds = Array();

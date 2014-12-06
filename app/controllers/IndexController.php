@@ -11,11 +11,8 @@ class IndexController extends BaseController {
     /*Landing page for P4*/
 	public function showIndex()
         {   
-            /*$feeds = Feed::getIndexFeed();*/
-            /*return View::make('indexFeed')->with('feeds', $feeds);*/
             $feeds = Feed::all();
             return View::make('indexFeed', compact('feeds'));
-            
         }
     
     /*Section to customoze feeds for main page*/
