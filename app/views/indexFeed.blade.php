@@ -16,24 +16,6 @@
 
 @section('content')
 
-        //TestCode//
-        <!-- <br>
-        <div class='form-group'>
-			{{ Form::label('feed_id', 'Feed') }}
-			{{ Form::select('feed_id', $feeds); }}
-		</div>
-        -->
-
-@foreach($feeds as $feed)
-        {{ $feed->name }}
-        {{ $feed->url }}
-        {{ $feed->maxresults }}
-        <br>
-@endforeach
-
-        //EndTestCode//
-        <br>
-
         <div data-dojo-type="dojox.layout.GridContainer" data-dojo-props='id:"gc1", handleClasses:"dijitTitlePaneTitle", withHandles:"true", nbZones:"3", hasResizableColumns:"false", opacity:"0.3", allowAutoScroll:"true", region:"center", minChildWidth:"20", minColWidth:"20", isAutoOrganized:"true"'> 
 
         <div data-dojo-type="dojox.widget.Portlet" data-dojo-props='title:"Portlets Refreshed Every 30 Minutes", column:"1"'>
@@ -69,150 +51,17 @@
                         dojo.byId("dateGoesHere").innerHTML = "Date Selected: " + date.toString();
                     </script>
                 </div>
-                <div id="dateGoesHere">
-                </div>
+                <div id="dateGoesHere"></div>
             </div>
-
-	   <div data-dojo-type="dojox.widget.FeedPortlet" data-dojo-props='id:"slashDotNews",
-                url:"http://rss.slashdot.org/Slashdot/slashdot", maxResults:"10"'>
-                <div data-dojo-type="dojox.widget.PortletFeedSettings">
-                </div>
-           </div>
-
-	   <div data-dojo-type="dojox.widget.FeedPortlet" data-dojo-props='id:"slashDotLinux",
-                url:"http://rss.slashdot.org/Slashdot/slashdotlinux", maxResults:"10"'>
-                <div data-dojo-type="dojox.widget.PortletFeedSettings">
-                </div>
-                <div>
-                        <!---->
-                </div>
-           </div>
-
-           <div data-dojo-type="dojox.widget.FeedPortlet" data-dojo-props='id:"bbcFeed",
-                url:"http://feeds.bbci.co.uk/news/rss.xml", maxResults:"10"'>
-                <div data-dojo-type="dojox.widget.PortletFeedSettings">
-                </div>
-                <div>
-                        <!---->
-                </div>
-           </div>
-
-           <div data-dojo-type="dojox.widget.FeedPortlet" data-dojo-props='id:"slashDotHardware",
-                url:"http://rss.slashdot.org/Slashdot/slashdothardware", maxResults:"10"'>
-                <div data-dojo-type="dojox.widget.PortletFeedSettings">
-                </div>
-                <div>
-                        <!---->
-                </div>
-           </div>
-
-           <div data-dojo-type="dojox.widget.FeedPortlet" data-dojo-props='id:"slashDotIt",
-                url:"http://rss.slashdot.org/Slashdot/slashdotit",  maxResults:"10"'>
-                <div data-dojo-type="dojox.widget.PortletFeedSettings">
-                </div>
-                <div>
-                        <!---->
-                </div>
-           </div>
-
-	   <div data-dojo-type="dojox.widget.FeedPortlet" data-dojo-props='id:"cnnTopNews",
-        	url:"http://rss.cnn.com/rss/cnn_topstories.rss", maxResults:"10"'>
-            	<div data-dojo-type="dojox.widget.PortletFeedSettings">
-            	</div>
-            	<div>
-			<!---->
-            	</div>
-           </div>
-
-	   <div data-dojo-type="dojox.widget.FeedPortlet" data-dojo-props='id:"itWorldFeed",
-                url:"http://www.itworld.com/taxonomy/term/16/all/feed", maxResults:"10"'>
-                <div data-dojo-type="dojox.widget.PortletFeedSettings">
-                </div>
-                <div>
-			<!---->
-                </div>
-           </div>
-
-	   <div data-dojo-type="dojox.widget.FeedPortlet" data-dojo-props='id:"nextWebFeed",
-                url:"http://thenextweb.com/feed/rss", maxResults:"10"'>
-                <div data-dojo-type="dojox.widget.PortletFeedSettings">
-                </div>
-                <div>
-
-                </div>
-           </div>
-
-	   <div data-dojo-type="dojox.widget.FeedPortlet" data-dojo-props='id:"xconomyItFeed",
-                url:"http://feeds.feedburner.com/Xconomy_IT", maxResults:"10"'>
-                <div data-dojo-type="dojox.widget.PortletFeedSettings">
-                </div>
-                <div>
-			<!---->
-                </div>
-           </div>
-
-	   <div data-dojo-type="dojox.widget.FeedPortlet" data-dojo-props='id:"xconomyVcFeed",
-                url:"http://feeds.feedburner.com/Xconomy_VC", maxResults:"10"'>
-                <div data-dojo-type="dojox.widget.PortletFeedSettings">
-                </div>
-                <div>
-                        <!---->
-                </div>
-           </div>
-
-           <div data-dojo-type="dojox.widget.FeedPortlet" data-dojo-props='id:"linuxJournalFeed",
-                url:"http://feeds.feedburner.com/linuxjournalcom", maxResults:"10"'>
-                <div data-dojo-type="dojox.widget.PortletFeedSettings">
-                </div>
-                <div>
-                        <!---->
-                </div>
-           </div>
-
-	   <div data-dojo-type="dojox.widget.FeedPortlet" data-dojo-props='id:"techRepublicFeed",
-                url:"http://www.techrepublic.com/rssfeeds/articles/latest/", maxResults:"10"'>
-                <div data-dojo-type="dojox.widget.PortletFeedSettings">
-                </div>
-                <div>
-			<!---->
-                </div>
-           </div>
-
-	   <div data-dojo-type="dojox.widget.FeedPortlet" data-dojo-props='id:"cioFeed",
-                url:"http://feeds.cio.com/cio/feed/articles", maxResults:"10"'>
-                <div data-dojo-type="dojox.widget.PortletFeedSettings">
-                </div>
-                <div>
-                        <!---->
-                </div>
-           </div>
-
-	   <div data-dojo-type="dojox.widget.FeedPortlet" data-dojo-props='id:"networkWorldFeed",
-                url:"http://www.networkworld.com/rss", maxResults:"10"'>
-                <div data-dojo-type="dojox.widget.PortletFeedSettings">
-                </div>
-                <div>
-                        <!---->
-                </div>
-           </div>
-
-	   <div data-dojo-type="dojox.widget.FeedPortlet" data-dojo-props='id:"bizJournalFeed",
-                url:"http://feeds.bizjournals.com/bizj_boston", maxResults:"10"'>
-                <div data-dojo-type="dojox.widget.PortletFeedSettings">
-                </div>
-                <div>
-                        <!---->
-                </div>
-           </div>
-
-	   <div data-dojo-type="dojox.widget.FeedPortlet" data-dojo-props='id:"ycFeed", column:"1",
-                url:"https://news.ycombinator.com/rss", maxResults:"10"'>
-                <div data-dojo-type="dojox.widget.PortletFeedSettings">
-                </div>
-                <div>
-			<!---->
-                </div>
-           </div>
+            
+@foreach($feeds as $feed)
+            <div data-dojo-type="dojox.widget.FeedPortlet" data-dojo-props='id:"{{ $feed->name }}",
+                url:"{{ $feed->url }}", maxResults:"{{ $feed->maxresults }}"'>
+                    <div data-dojo-type="dojox.widget.PortletFeedSettings"></div>
+            </div>
+@endforeach
+            
+	   
 
         </div>
 
