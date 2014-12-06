@@ -15,6 +15,7 @@ This application is a simple RSS news feed aggregator:
 + Default page shows pre-selected RSS feeds.
 + Creating an account allows you to add your own RSS feeds ex. <http://feeds.feedburner.com/pbs/wgbh/frontline/programs-feed>.
 + You are only allowed to create and edit your own feeds.
++ Dynamic page displayed based on log in status.
 
 ### Demo Information:
 I plan to do an in person demo in my Section after Thursday's lecture in front of my group and TA Dan.
