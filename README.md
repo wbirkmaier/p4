@@ -10,7 +10,7 @@ This project is the culmination of all the subject matter I have learned thus fa
 + Use a database with at least 2 tables (users, feeds and feed_user) . This count does not include a users table, but does include pivot tables.
 + Demonstrates all 4 CRUD interactions (user signup/login does not count towards this).
 
-### What the application does
+### What the application does:
 This application is a simple RSS news feed agrigator:
 + Default page shows pre-selected RSS feeds
 + Creating an account allows you to add your own RSS feeds ex. <http://feeds.feedburner.com/pbs/wgbh/frontline/programs-feed></http://feeds.feedburner.com/pbs/wgbh/frontline/programs-feed>
