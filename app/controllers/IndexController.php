@@ -110,8 +110,10 @@ class IndexController extends BaseController {
         {
             if (Auth::check())
                 {
+                    $user = Auth::id();
                     $id = Input::get('feed');
                     $feed = Feed::findOrFail($id);
+                    $feed->users()->detach($user);
                     $feed->delete();
             
                     return Redirect::action('IndexController@customizeFeed');
