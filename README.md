@@ -11,7 +11,7 @@ This project is the culmination of all the subject matter I have learned thus fa
 + Demonstrates all 4 CRUD interactions (user signup/login does not count towards this).
 
 ### What the application does:
-This application is a simple RSS news feed agrigator:
+This application is a simple RSS news feed aggregator:
 + Default page shows pre-selected RSS feeds
 + Creating an account allows you to add your own RSS feeds ex. <http://feeds.feedburner.com/pbs/wgbh/frontline/programs-feed></http://feeds.feedburner.com/pbs/wgbh/frontline/programs-feed>
 + You are only allowed to create and edit your own feeds
