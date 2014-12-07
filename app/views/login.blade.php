@@ -3,8 +3,8 @@
 @section('active')
 
 	<li><a href="{{ action('IndexController@showIndex') }}">Home</a></li>
-	<li class="active"><a href="{{ action('IndexController@getLogin') }}">Login</a></li>
-	<li><a href="{{ action('IndexController@getRegister') }}">Register</a></li>
+	<li class="active"><a href="{{ action('IndexController@getLogin') }}"> <i class="fa fa-sign-in"></i> Login</a></li>
+	<li><a href="{{ action('IndexController@getRegister') }}"> <i class="fa fa-keyboard-o"></i> Register</a></li>
 
 @stop
 

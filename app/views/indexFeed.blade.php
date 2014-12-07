@@ -5,11 +5,11 @@
     <!-- Generate dynamic menu base on URL and Login Status -->
 	<li class="active"><a href="{{ action('IndexController@showIndex') }}">Home</a></li>
     @if (Auth::check())
-        <li><a href="{{ action('IndexController@customizeFeed') }}">Customize</a></li>
-        <li><a href="{{ action('IndexController@getLogout') }}">Logout</a></li>
+        <li><a href="{{ action('IndexController@customizeFeed') }}"> <i class="fa fa-cogs"></i> Customize</a></li>
+        <li><a href="{{ action('IndexController@getLogout') }}"> <i class="fa fa-sign-out"></i> Logout</a></li>
     @else
-        <li><a href="{{ action('IndexController@getLogin') }}">Login</a></li>
-        <li><a href="{{ action('IndexController@getRegister') }}">Register</a></li>
+        <li><a href="{{ action('IndexController@getLogin') }}"> <i class="fa fa-sign-in"></i> Login</a></li>
+        <li><a href="{{ action('IndexController@getRegister') }}"> <i class="fa fa-keyboard-o"></i> Register</a></li>
     @endif
 
 @stop
@@ -37,12 +37,12 @@
 		         <br>
 		         <br>
                     @if (Auth::check())
-                        <a href="{{ action('IndexController@getLogout') }}" class="btn btn-primary">Logout</a>
+                        <a href="{{ action('IndexController@getLogout') }}" class="btn btn-primary"> <i class="fa fa-sign-out"></i> Logout</a>
                     @else
                          Would you like to customize this view?<br>
                         <br>
                         <b>
-                        <a href="{{ action('IndexController@getLogin') }}" class="btn btn-primary">Login</a></b> or <b><a href="{{ action('IndexController@getRegister') }}" class="btn btn-primary">Register</a>
+                        <a href="{{ action('IndexController@getLogin') }}" class="btn btn-primary"> <i class="fa fa-sign-in"></i> Login</a></b> or <b><a href="{{ action('IndexController@getRegister') }}" class="btn btn-primary"> <i class="fa fa-keyboard-o"></i> Register</a>
                     @endif
                 </b>
               </div>

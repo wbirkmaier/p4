@@ -5,11 +5,11 @@
     <!-- Generate dynamic menu base on URL and Login Status -->
 	<li><a href="{{ action('IndexController@showIndex') }}">Home</a></li>
     @if (Auth::check())
-        <li class="active"><a href="{{ action('IndexController@customizeFeed') }}">Customize</a></li>
-        <li><a href="{{ action('IndexController@getLogout') }}">Logout</a></li>
+        <li class="active"><a href="{{ action('IndexController@customizeFeed') }}"> <i class="fa fa-cogs"></i> Customize</a></li>
+        <li><a href="{{ action('IndexController@getLogout') }}"> <i class="fa fa-sign-out"></i> Logout</a></li>
     @else
-        <li><a href="{{ action('IndexController@getLogin') }}">Login</a></li>
-        <li><a href="{{ action('IndexController@getRegister') }}">Register</a></li>
+        <li><a href="{{ action('IndexController@getLogin') }}"> <i class="fa fa-sign-in"></i> Login</a></li>
+        <li><a href="{{ action('IndexController@getRegister') }}"> <i class="fa fa-keyboard-o"></i> Register</a></li>
     @endif
 
 @stop
@@ -18,7 +18,7 @@
 
 <h3>Customize your RSS Feed list.</h3>
 <br>
-<a href="{{ action('IndexController@createFeed') }}" class="btn btn-primary">Create Feed</a>
+<a href="{{ action('IndexController@createFeed') }}" class="btn btn-primary"> <i class="fa fa-cog"></i> Create Feed</a>
 <br>
 <br>
 
@@ -43,8 +43,8 @@
             <td>{{ $feed->url }}</td>
             <td>{{ $feed->maxresults }}</td>
             <td>
-                <a href="{{ action('IndexController@changeFeed', $feed->id) }}"class="btn btn-primary">Modify</a>
-                <a href="{{ action('IndexController@deleteFeed', $feed->id) }}" class="btn btn-danger">Delete</a>
+                <a href="{{ action('IndexController@changeFeed', $feed->id) }}"class="btn btn-primary"> <i class="fa fa-pencil fa-fw"></i> Modify</a>
+                <a href="{{ action('IndexController@deleteFeed', $feed->id) }}" class="btn btn-danger"> <i class="fa fa-trash-o fa-lg"></i> Delete</a>
             </td>
         </tr>
 @endforeach
