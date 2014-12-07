@@ -17,10 +17,9 @@
     
     <form action="{{ url('login') }}" method="post">
         
-        <!-- Allow for fancy bootstrap icons for email and password via classes-->
+        <!-- Allow for fancy font awesome bootstrap icons for email and password via classes-->
         <div class="input-group margin-bottom-sm">
             <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
-            
             <input class="form-control" type="text" name="email" placeholder="email address">
         </div>
         <br>
