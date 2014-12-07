@@ -35,7 +35,7 @@
         </div>
         <br>
         <input type="submit" value="Create" class="btn btn-primary"/>
-        <a href="{{ action('IndexController@showIndex') }}" class="btn btn-danger"><i class="fa fa-trash-o fa-lg"></i>Cancel</a>
+        <a href="{{ action('IndexController@showIndex') }}" class="btn btn-danger"><i class="fa fa-trash-o fa-lg"></i> Cancel</a>
         <?= Form::token() ?>
         <br>
     </form>
