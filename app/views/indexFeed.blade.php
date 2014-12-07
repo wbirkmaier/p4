@@ -52,15 +52,14 @@
                 <div data-dojo-type="dojox.widget.PortletSettings">
                     Put whatever settings you like in here
                 </div>
-                <div>
-			 <!-- -->
-                </div>
+ 
                 <div data-dojo-type="dojox.widget.Calendar">
                     <script type="dojo/connect" data-dojo-event="onValueSelected" data-dojo-args="date">
                         dojo.byId("dateGoesHere").innerHTML = "Date Selected: " + date.toString();
                     </script>
                 </div>
                 <div id="dateGoesHere"></div>
+                <br>
             </div>
             
 @foreach($feeds as $feed)
