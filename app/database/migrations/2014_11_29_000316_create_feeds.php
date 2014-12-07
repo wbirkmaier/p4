@@ -15,7 +15,7 @@ class CreateFeeds extends Migration {
         Schema::create('feeds', function($table)
             {
                 $table->increments('id');
-                $table->string('name', 128)->unique();
+                $table->string('name', 128);
                 $table->string('url', 128);
                 $table->integer('maxresults');
                 $table->timestamps();
