@@ -60,6 +60,20 @@ class IndexController extends BaseController {
                 {
                     $user = Auth::id();
                     $feed = new Feed;
+                
+                    /*Code to check that each feed name is unique for for the dojo widget*/
+                    $feeds = User::find($user)->feeds;
+                    foreach ($feeds as $feedName)
+                        {
+                            /*Search each feed for it's name and compare to the form enterned name*/
+                            if  ($feedName->name == Input::get('name'))
+                                {
+                                    return Redirect::to('/createFeed')
+                                    ->with('flashBanner', 'Please ensure your RSS Feed Name is unique.')
+                                    ->withInput();
+                                }     
+                        }
+                    
                     $feed->name = Input::get('name');
                     $feed->url = Input::get('url');
                     $feed->maxresults = Input::get('maxresults');
