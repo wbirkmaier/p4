@@ -16,8 +16,10 @@
 	
 	<!-- Bootstrap -->
 	<link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css"/>
-    <!-- Bootsrap Mobile View -->
+    <!-- Bootstrap Mobile View -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Font Awesome css for bootstrap -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 	<!-- Custom styles for this template -->
 	<link href="/css/starter-template.css" rel="stylesheet">
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
