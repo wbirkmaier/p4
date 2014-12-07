@@ -19,14 +19,12 @@
     <h3>Enter an RSS Feed URI to store in your account</h3>
 
     <form method="post" role="form" action="{{ action('IndexController@postCreateFeed') }}">
-        <label for="title">Feed Name</label>
-        <input class="form-control" type="text" name="name" placeholder="CNN News"/>
+
+        <input class="form-control" type="text" name="name" placeholder="your feed name - CNN News"/>
         <br>
-        <label for="url">RSS Feed URL</label>
-        <input class="form-control" type="text" name="url" placeholder="http://cnn.com/rss.xml"/>
+        <input class="form-control" type="text" name="url" placeholder="your feed url - http://cnn.com/rss.xml"/>
         <br>
-        <label for="maxresults">Number of Articles to Return</label>
-        <input class="form-control" type="int" name="maxresults" placeholder="10"/>
+        <input class="form-control" type="int" name="maxresults" placeholder="number of articles to return - 10"/>
         <br>
         <input type="submit" value="Create" class="btn btn-primary"/>
         <a href="{{ action('IndexController@showIndex') }}" class="btn btn-danger">Cancel</a>

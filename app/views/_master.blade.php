@@ -16,6 +16,8 @@
 	
 	<!-- Bootstrap -->
 	<link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css"/>
+    <!-- Bootsrap Mobile View -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- Custom styles for this template -->
 	<link href="/css/starter-template.css" rel="stylesheet">
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
