@@ -59,6 +59,8 @@ class IndexController extends BaseController {
             if (Auth::check())
                 {
                     $user = Auth::id();
+                
+                    /*Create new feed object*/
                     $feed = new Feed;
                 
                     /*Code to check that each feed name is unique for for the dojo widget*/
@@ -73,8 +75,16 @@ class IndexController extends BaseController {
                                     ->withInput();
                                 }     
                         }
+                
+                    /*Class to strip any strange characters from feed name*/
+                    /*Create new object */
+                    $sanitize = new Sanitize;
                     
-                    $feed->name = Input::get('name');
+                    /*Call the method and set the string */
+                    $sanitize->setSanitize(Input::get('name'));
+                                        
+                    /*call the method and return the string cleaned and save to database*/
+                    $feed->name = $sanitize->getSanitize();
                     $feed->url = Input::get('url');
                     $feed->maxresults = Input::get('maxresults');
                     $feed->save();
@@ -106,7 +116,16 @@ class IndexController extends BaseController {
             if (Auth::check())
                 {
                     $feed = Feed::findOrFail(Input::get('id'));
-                    $feed->name = Input::get('name');
+                
+                    /*Class to strip any strange characters from feed name*/
+                    /*Create new object */
+                    $sanitize = new Sanitize;
+                    
+                    /*Call the method and set the string */
+                    $sanitize->setSanitize(Input::get('name'));
+                                        
+                    /*call the method and return the string cleaned and save to database*/
+                    $feed->name = $sanitize->getSanitize();
                     $feed->url = Input::get('url');
                     $feed->maxresults = Input::get('maxresults');
                     $feed->save();
