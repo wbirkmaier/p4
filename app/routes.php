@@ -10,7 +10,7 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
-
+/*Bind feed model to route*/
 Route::model('feed', 'Feed');
 
 /*Main Route for Dashboard */
