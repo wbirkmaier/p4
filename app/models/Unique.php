@@ -1,5 +1,5 @@
 <?php
-
+/*Not in use for now*/
 class Unique extends Eloquent
     {
         public static function nameCheck(&$cleanedName)

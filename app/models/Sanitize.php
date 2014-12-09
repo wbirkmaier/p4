@@ -1,5 +1,5 @@
 <?php
-
+/*Clean up strings*/
 class Sanitize extends Eloquent
     {   
         /*Set Global Properties (variable) for all Methods (Functions) */
