@@ -26,7 +26,7 @@
         <br>
         <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-rss-square"></i></span>
-            <input class="form-control" type="text" name="url" placeholder="your feed url - http://cnn.com/rss.xml"/>
+            <input class="form-control" type="text" name="url" placeholder="your feed url - http://rss.cnn.com/rss/cnn_tech.rss"/>
         </div>
         <br>
         <div class="input-group">
