@@ -18,7 +18,7 @@
 
 <h3>Customize your RSS Feed list.</h3>
 <br>
-<a href="{{ action('IndexController@createFeed') }}" class="btn btn-primary"> <i class="fa fa-cog"></i> Create Feed</a>
+<a href="{{ action('IndexController@createFeed') }}" class="btn btn-primary"> <i class="fa fa-cog fa-spin"></i> Create Feed</a>
 <br>
 <br>
 
