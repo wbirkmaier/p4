@@ -58,23 +58,10 @@ class IndexController extends BaseController {
         {
             if (Auth::check())
                 {
+                    /*used for attaching user to object*/
                     $user = Auth::id();
-                
                     /*Create new feed object*/
                     $feed = new Feed;
-                
-                    /*Code to check that each feed name is unique for for the dojo widget*/
-                    $feeds = User::find($user)->feeds;
-                    foreach ($feeds as $feedName)
-                        {
-                            /*Search each feed for it's name and compare to the form enterned name*/
-                            if  ($feedName->name == Input::get('name'))
-                                {
-                                    return Redirect::to('/createFeed')
-                                    ->with('flashBanner', 'Please ensure your RSS Feed Name is unique.')
-                                    ->withInput();
-                                }     
-                        }
                 
                     /*Class to strip any strange characters from feed name*/
                     /*Create new object */
@@ -83,8 +70,30 @@ class IndexController extends BaseController {
                     /*Call the method and set the string */
                     $sanitize->setSanitize(Input::get('name'));
                                         
-                    /*call the method and return the string cleaned and save to database*/
-                    $feed->name = $sanitize->getSanitize();
+                    /*call the method and return the string cleaned*/
+                    $cleanedName = $sanitize->getSanitize();
+                
+                    /*Save cleaned and checked duplicate name to database from Unique model
+                    $feed->name = Unique::nameCheck($cleanedName);*/
+                
+                    /*Code to check that each feed name is unique for for the dojo widget*/
+                    $feeds = User::find($user)->feeds;
+                    foreach ($feeds as $feedName)
+                        {
+                            /*Search each feed for it's name and compare to the form enterned name*/
+                            if  ($feedName->name == $cleanedName)
+                                {
+                                    return Redirect::to('/createFeed')
+                                    ->with('flashBanner', 'Please ensure your RSS Feed Name is unique.')
+                                    ->withInput();
+                                } 
+                            else
+                                {
+                                    /*Save cleaned and checked duplicate name to database*/
+                                    $feed->name = $cleanedName;
+                                }
+                        }
+                
                 
                     /*Check if URL is valid*/
                     $testURL = Input::get('url');
@@ -128,7 +137,8 @@ class IndexController extends BaseController {
     public function postChangeFeed()
         {
             if (Auth::check())
-                {
+                {   
+                    /*Fail if ID for row is not found*/
                     $feed = Feed::findOrFail(Input::get('id'));
                 
                     /*Class to strip any strange characters from feed name*/
@@ -138,8 +148,29 @@ class IndexController extends BaseController {
                     /*Call the method and set the string */
                     $sanitize->setSanitize(Input::get('name'));
                                         
-                    /*call the method and return the string cleaned and save to database*/
-                    $feed->name = $sanitize->getSanitize();
+                    /*call the method and return the string cleaned*/
+                    $cleanedName = $sanitize->getSanitize();
+                
+                   /*Code to check that each feed name is unique for for the dojo widget*/
+                    $user = Auth::id();
+                    $feeds = User::find($user)->feeds;
+                    foreach ($feeds as $feedName)
+                        {
+                            /*Search each feed for it's name and compare to the form enterned name*/
+                            if  ($feedName->name == $cleanedName)
+                                {
+                                    return Redirect::to('/customizeFeed')
+                                    ->with('flashBanner', 'Please ensure your RSS Feed Name is unique.')
+                                    ->withInput();
+                                } 
+                            else
+                                {
+                                    /*Save cleaned and checked duplicate name to database*/
+                                    $feed->name = $cleanedName;
+                                }
+                        }
+                
+                    
                 
                     /*Check if URL is valid*/
                     $testURL = Input::get('url');

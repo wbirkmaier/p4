@@ -21,17 +21,23 @@
     <form method="post" role="form" action="{{ action('IndexController@postCreateFeed') }}">
         <div class="input-group margin-bottom-sm">
             <span class="input-group-addon"><i class="fa fa-bookmark"></i></span>
-            <input class="form-control" type="text" name="name" placeholder="your unique feed name - CNN News"/>
+            
+            <!--<input placeholder="your unique feed name - CNN News" class="form-control" name="name" type="text" value=""/>-->
+            {{ Form::text('name', '', array('placeholder'=>'your unique feed name - CNN News', 'class'=>'form-control')) }}
         </div>
         <br>
         <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-rss-square"></i></span>
-            <input class="form-control" type="text" name="url" placeholder="your feed url - http://rss.cnn.com/rss/cnn_tech.rss"/>
+            
+            <!--<input placeholder="your feed url - http://rss.cnn.com/rss/cnn_tech.rss" class="form-control" name="url" type="text" value=""/>-->
+            {{ Form::text('url', '', array('placeholder'=>'your feed url - http://rss.cnn.com/rss/cnn_tech.rss', 'class'=>'form-control')) }}
         </div>
         <br>
         <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-download"></i></span>
-            <input class="form-control" type="int" name="maxresults" placeholder="number of articles to return - 10"/>
+            
+            <!--<input placeholder="number of articles to return - 10" class="form-control" name="maxresults" type="int" value=""/>-->
+            {{ Form::number('maxresults', '', array('placeholder'=>'number of articles to return - 10', 'class'=>'form-control')) }}
         </div>
         <br>
         <input type="submit" value="Create" class="btn btn-primary"/>
