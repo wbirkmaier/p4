@@ -1,8 +1,8 @@
 @extends('_master')
 
 @section('active')
-
-    <!- Generate dynamic menu base on URL and Login Status ->
+    <!-- Primary page for debug purpose -->
+    <!-- Generate dynamic menu base on URL and Login Status -->
 	<li class="active"><a href="{{ action('IndexController@showIndex') }}">Home</a></li>
     @if (Auth::check())
         <li><a href="{{ action('IndexController@getLogout') }}"> <i class="fa fa-sign-out"></i> Logout</a></li>

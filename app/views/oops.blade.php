@@ -1,7 +1,7 @@
 @extends('_master')
 
 @section('content')
-
+    <!--Primary view for catching wrong routes-->
 	<h1>Oops!</h1>
 	<p>Sometimes you wander into strange places and decide to leave.</p>
 	<br>

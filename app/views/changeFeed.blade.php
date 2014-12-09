@@ -1,7 +1,7 @@
 @extends('_master')
 
 @section('active')
-
+    <!-- Primary views for changing a feed -->
 	<!-- Generate dynamic menu base on URL and Login Status -->
 	<li><a href="{{ action('IndexController@showIndex') }}">Home</a></li>
     @if (Auth::check())

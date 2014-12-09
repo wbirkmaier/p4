@@ -23,6 +23,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	 */
 	protected $hidden = array('password', 'remember_token');
     
+    /*Link table to feeds table*/
     public function feeds()
             {
                 return $this->belongsToMany('Feed');

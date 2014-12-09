@@ -1,7 +1,7 @@
 @extends('_master')
 
 @section('active')
-
+    <!-- Primary view for feeds -->
     <!-- Generate dynamic menu base on URL and Login Status -->
 	<li class="active"><a href="{{ action('IndexController@showIndex') }}">Home</a></li>
     @if (Auth::check())
@@ -16,6 +16,7 @@
 
 @section('content')
 
+    <!--What to show for a new user when no feeds are found in the database-->
 @if ($feeds->isEmpty())
     <h3>No Feed Records Found</h3>
     <br>
@@ -24,9 +25,10 @@
     <br>
 
 @else
-
+        <!-- Dojo specific code block-->
         <div data-dojo-type="dojox.layout.GridContainer" data-dojo-props='id:"gc1", handleClasses:"dijitTitlePaneTitle", withHandles:"true", nbZones:"3", hasResizableColumns:"false", opacity:"0.3", allowAutoScroll:"true", region:"center", minChildWidth:"20", minColWidth:"20", isAutoOrganized:"true"'> 
 
+        <!--Primary dojo portlet with information-->
         <div data-dojo-type="dojox.widget.Portlet" data-dojo-props='title:"Portlets Refreshed Every 30 Minutes", column:"1"'>
                 	<div data-dojo-type="dojox.widget.PortletSettings"></div>
 		      <div>
@@ -36,6 +38,7 @@
 		         Click the settings icon in the title bar to enter a different feed to load. Hovering over a news item shows a summary of it in a tooltip.
 		         <br>
 		         <br>
+                    <!--Check if a user is logged in and decide view to present -->
                     @if (Auth::check())
                         <a href="{{ action('IndexController@getLogout') }}" class="btn btn-primary"> <i class="fa fa-sign-out"></i> Logout</a>
                     @else
@@ -47,7 +50,8 @@
                 </b>
               </div>
         </div>
-
+            
+        <!--Calendard dojo widget -->
 	    <div data-dojo-type="dojox.widget.Portlet" data-dojo-props='title:"Calendar Portlet", column:"1"'>
                 <div data-dojo-type="dojox.widget.PortletSettings">
                     Put whatever settings you like in here
@@ -62,6 +66,7 @@
                 <br>
             </div>
             
+<!--All the custom feeds for a view-->            
 @foreach($feeds as $feed)
             <div data-dojo-type="dojox.widget.FeedPortlet" data-dojo-props='id:"{{ $feed->name }}",
                 url:"{{ $feed->url }}", maxResults:"{{ $feed->maxresults }}"'>

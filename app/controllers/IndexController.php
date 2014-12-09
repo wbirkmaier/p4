@@ -87,13 +87,11 @@ class IndexController extends BaseController {
                                     ->with('flashBanner', 'Please ensure your RSS Feed Name is unique.')
                                     ->withInput();
                                 } 
-                            else
-                                {
-                                    /*Save cleaned and checked duplicate name to database*/
-                                    $feed->name = $cleanedName;
-                                }
                         }
-                
+                    
+                    /*Save cleaned and checked duplicate name to database*/
+                    $feed->name = $cleanedName;
+                    
                 
                     /*Check if URL is valid*/
                     $testURL = Input::get('url');
@@ -110,6 +108,8 @@ class IndexController extends BaseController {
                         }
                     
                     $feed->maxresults = Input::get('maxresults');
+                    
+                    /*Save Record to database*/
                     $feed->save();
                     $feed->users()->attach($user); 
         
@@ -163,15 +163,11 @@ class IndexController extends BaseController {
                                     ->with('flashBanner', 'Please ensure your RSS Feed Name is unique.')
                                     ->withInput();
                                 } 
-                            else
-                                {
-                                    /*Save cleaned and checked duplicate name to database*/
-                                    $feed->name = $cleanedName;
-                                }
                         }
-                
                     
-                
+                    /*Save cleaned and checked duplicate name to database*/
+                    $feed->name = $cleanedName;
+                    
                     /*Check if URL is valid*/
                     $testURL = Input::get('url');
                     if(!filter_var($testURL, FILTER_VALIDATE_URL))
@@ -187,6 +183,8 @@ class IndexController extends BaseController {
                         }
                 
                     $feed->maxresults = Input::get('maxresults');
+                
+                    /*Save Record to database*/
                     $feed->save();
             
                     return Redirect::action('IndexController@customizeFeed');

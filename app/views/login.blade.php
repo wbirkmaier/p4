@@ -9,7 +9,8 @@
 @stop
 
 @section('content')
- <!-- Center form with bootstrap doing (12 - 3) / 2 = ~4 -->
+    <!--Primary view for loging in -->
+    <!-- Center form with bootstrap doing (12 - 3) / 2 = ~4 -->
  <div class="col-md-3 col-md-offset-4">
      
     <h2>Log in</h2>
