@@ -85,7 +85,21 @@ class IndexController extends BaseController {
                                         
                     /*call the method and return the string cleaned and save to database*/
                     $feed->name = $sanitize->getSanitize();
-                    $feed->url = Input::get('url');
+                
+                    /*Check if URL is valid*/
+                    $testURL = Input::get('url');
+                    if(!filter_var($testURL, FILTER_VALIDATE_URL))
+                        {
+                            return Redirect::to('/createFeed')
+                            ->with('flashBanner', 'Please ensure your URL it technically correct.')
+                            ->withInput();
+                        }
+                    else
+                        {
+                            /*Save checked URL here*/
+                            $feed->url = $testURL;
+                        }
+                    
                     $feed->maxresults = Input::get('maxresults');
                     $feed->save();
                     $feed->users()->attach($user); 
@@ -126,7 +140,21 @@ class IndexController extends BaseController {
                                         
                     /*call the method and return the string cleaned and save to database*/
                     $feed->name = $sanitize->getSanitize();
-                    $feed->url = Input::get('url');
+                
+                    /*Check if URL is valid*/
+                    $testURL = Input::get('url');
+                    if(!filter_var($testURL, FILTER_VALIDATE_URL))
+                        {
+                            return Redirect::to('/createFeed')
+                            ->with('flashBanner', 'Please ensure your URL it technically correct.')
+                            ->withInput();
+                        }
+                    else
+                        {
+                            /*Save checked URL here*/
+                            $feed->url = $testURL;
+                        }
+                
                     $feed->maxresults = Input::get('maxresults');
                     $feed->save();
             
