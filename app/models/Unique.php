@@ -17,6 +17,10 @@ class Unique extends Eloquent
                             ->with('flashBanner', 'Please ensure your RSS Feed Name is unique.')
                             ->withInput();
                         }     
+                    else
+                        {   
+                            $feed->name = $cleanedName;
+                        }
                 }
                 
             /*Return cleaned and checked duplicate*/

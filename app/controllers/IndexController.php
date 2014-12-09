@@ -73,8 +73,8 @@ class IndexController extends BaseController {
                     /*call the method and return the string cleaned*/
                     $cleanedName = $sanitize->getSanitize();
                 
-                    /*Save cleaned and checked duplicate name to database from Unique model
-                    $feed->name = Unique::nameCheck($cleanedName);*/
+                    /*Save cleaned and checked duplicate name to database from Unique model Needs more work*/
+                    /*$feed->name = Unique::nameCheck($cleanedName);*/
                 
                     /*Code to check that each feed name is unique for for the dojo widget*/
                     $feeds = User::find($user)->feeds;
