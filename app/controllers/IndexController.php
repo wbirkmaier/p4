@@ -8,7 +8,7 @@ class IndexController extends BaseController {
             parent::__construct();
         }
         
-    /*Landing page for P4*/
+    /*Landing page for P4 will select all feeds with user id of 1 and display*/
 	public function showIndex()
         {   
             if (Auth::check())
@@ -26,7 +26,7 @@ class IndexController extends BaseController {
             return View::make('indexFeed', compact('feeds'));
         }
     
-    /*Section to customoze feeds for main page*/
+    /*Section to alower a user to enter customized feeds for main page*/
     public function customizeFeed()
         {
             if (Auth::check())
@@ -41,7 +41,7 @@ class IndexController extends BaseController {
                 }
         }
     
-    /*Section to create a new feed in database*/
+    /*Section to allow a user to create a new feed in database*/
     public function createFeed()
         {
             if (Auth::check())
@@ -54,6 +54,7 @@ class IndexController extends BaseController {
                 }
         }
     
+    /*After feed date is entered, will check that feed name has no strange characers, is unique and will also check that URL is syntactically valid */
     public function postCreateFeed()
         {
             if (Auth::check())
@@ -93,7 +94,7 @@ class IndexController extends BaseController {
                     $feed->name = $cleanedName;
                     
                 
-                    /*Check if URL is valid*/
+                    /*Check if URL is syntactically valid*/
                     $testURL = Input::get('url');
                     if(!filter_var($testURL, FILTER_VALIDATE_URL))
                         {
@@ -134,7 +135,7 @@ class IndexController extends BaseController {
                 }
         }
     
-    /*Section to post process the input when you change feed in database*/
+    /*Section to post process the input when you change feed in database making sure that if the name of the feed has changed, it is still unique and the url is syntactically correct*/
     public function postChangeFeed()
         {
             if (Auth::check())
@@ -215,6 +216,7 @@ class IndexController extends BaseController {
                 }
         }
     
+    /*Delete the feed and then return to the customized feed view*/
     public function postDeleteFeed()
         {
             if (Auth::check())
@@ -239,6 +241,7 @@ class IndexController extends BaseController {
             return View::make('register');
         }
 
+    /*Take user registration variables and make sure the username and email are unique, also verify that the passwor is at least 3 characters long*/
 	public function postRegister()
         {
             $user = new User;
@@ -254,6 +257,7 @@ class IndexController extends BaseController {
                 'username' => 'required|unique:users,username'
             );
         
+            /*Check that all rules as defined above are met*/
             $validator = Validator::make(Input::all(), $rules);
         
             if ($validator->fails()) 
@@ -288,6 +292,7 @@ class IndexController extends BaseController {
             return View::make('login');
         }
 
+    /*Pass login credentials to start session*/
     public function postLogin()
         {
             $credentials = Input::only('email', 'password');
