@@ -134,6 +134,7 @@ class IndexController extends BaseController {
                 }
         }
     
+    /*Section to post process the input when you change feed in database*/
     public function postChangeFeed()
         {
             if (Auth::check())
@@ -151,23 +152,29 @@ class IndexController extends BaseController {
                     /*call the method and return the string cleaned*/
                     $cleanedName = $sanitize->getSanitize();
                 
-                   /*Code to check that each feed name is unique for for the dojo widget*/
-                    $user = Auth::id();
-                    $feeds = User::find($user)->feeds;
-                    foreach ($feeds as $feedName)
+                    /*Check if the feed name has changed when edditing and if it has, then verify it is OK to proceed and is unique*/
+                    if ($cleanedName != $feed->name)
                         {
-                            /*Search each feed for it's name and compare to the form enterned name*/
-                            if  ($feedName->name == $cleanedName)
+                 
+                            /*Code to check that each feed name is unique for for the dojo widget*/
+                            $user = Auth::id();
+                            $feeds = User::find($user)->feeds;
+                            foreach ($feeds as $feedName)
                                 {
-                                    return Redirect::to('/customizeFeed')
-                                    ->with('flashBanner', 'Please ensure your RSS Feed Name is unique.')
-                                    ->withInput();
-                                } 
+                                    /*Search each feed for it's name and compare to the form enterned name*/
+                                    if  ($feedName->name == $cleanedName)
+                                        {
+                                            return Redirect::to('/customizeFeed')
+                                            ->with('flashBanner', 'Please ensure your RSS Feed Name is unique.')
+                                            ->withInput();
+                                        } 
+                                }
                         }
-                    
+                
                     /*Save cleaned and checked duplicate name to database*/
                     $feed->name = $cleanedName;
-                    
+                
+                
                     /*Check if URL is valid*/
                     $testURL = Input::get('url');
                     if(!filter_var($testURL, FILTER_VALIDATE_URL))
