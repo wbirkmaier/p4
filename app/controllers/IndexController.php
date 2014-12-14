@@ -224,6 +224,8 @@ class IndexController extends BaseController {
                     $user = Auth::id();
                     $id = Input::get('feed');
                     $feed = Feed::findOrFail($id);
+                
+                    /*Delete pivot table association */
                     $feed->users()->detach($user);
                     $feed->delete();
             
