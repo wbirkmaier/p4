@@ -12,7 +12,7 @@ This project is the culmination of all the subject matter I have learned thus fa
 
 ### What the application does:
 This application is a simple RSS news feed aggregator:
-+ Default page shows pre-selected RSS feeds.
++ Default page shows pre-selected RSS feeds based on a primary user created during the seeding process and when database is set up.
 + Creating an account allows you to add your own RSS feeds ex. <http://feeds.feedburner.com/pbs/wgbh/frontline/programs-feed>.
 + You are only allowed to create and edit your own feeds.
 + Dynamic page displayed based on log in status.
