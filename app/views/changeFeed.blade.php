@@ -26,7 +26,7 @@
         <label for="url">URL</label>
         <input class="form-control" type="text" name="url" value="{{ $feed->url }}"/>
         <br>
-        <label for="maxresults">Number of Articles to Return</label>
+        <label for="maxresults">Number of Articles to Return - Less than 100, default 10</label>
         <input class="form-control" type="int" name="maxresults" value="{{ $feed->maxresults }}"/>
         <br>
         <input class="btn btn-primary" type="submit" value="Save"/>

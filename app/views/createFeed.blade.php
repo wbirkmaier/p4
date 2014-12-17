@@ -37,7 +37,7 @@
             <span class="input-group-addon"><i class="fa fa-download"></i></span>
             
             <!--<input placeholder="number of articles to return - 10" class="form-control" name="maxresults" type="int" value=""/>-->
-            {{ Form::number('maxresults', '', array('placeholder'=>'number of articles to return - 10', 'class'=>'form-control')) }}
+            {{ Form::number('maxresults', '', array('placeholder'=>'number of articles to return - (Less than 100, default 10)', 'class'=>'form-control')) }}
         </div>
         <br>
         <input type="submit" value="Create" class="btn btn-primary"/>

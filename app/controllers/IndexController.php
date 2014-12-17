@@ -107,8 +107,20 @@ class IndexController extends BaseController {
                             /*Save checked URL here*/
                             $feed->url = $testURL;
                         }
-                    
-                    $feed->maxresults = Input::get('maxresults');
+                
+                    /*Max number of feeds*/
+                    $maxFeeds = 99;
+                    $numFeeds = Input::get('maxresults');
+	               
+                    /*Check the number of feeds is valid and reasonable and save to database*/
+                    if ($numFeeds  == "" || $numFeeds > $maxFeeds || $numFeeds <= 0) 
+                        {
+                            $feed->maxresults = 10;
+                        }
+                    else 
+                        {
+                            $feed->maxresults = Input::get('maxresults');
+                        }
                     
                     /*Save Record to database*/
                     $feed->save();
@@ -190,7 +202,19 @@ class IndexController extends BaseController {
                             $feed->url = $testURL;
                         }
                 
-                    $feed->maxresults = Input::get('maxresults');
+                    /*Max number of feeds*/
+                    $maxFeeds = 99;
+                    $numFeeds = Input::get('maxresults');
+	               
+                    /*Check the number of feeds is valid and reasonable and save to database*/
+                    if ($numFeeds  == "" || $numFeeds > $maxFeeds || $numFeeds <= 0) 
+                        {
+                            $feed->maxresults = 10;
+                        }
+                    else 
+                        {
+                            $feed->maxresults = Input::get('maxresults');
+                        }
                 
                     /*Save Record to database*/
                     $feed->save();
