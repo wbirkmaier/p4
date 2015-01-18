@@ -140,7 +140,27 @@ class P4Seeder extends Seeder
             $feed->maxresults = '10';
             $feed->save();
             $feed->users()->attach($user);
-            
+        
+            $feed = new Feed;
+            $feed->name = 'EXTFeed';
+            $feed->url = 'http://www.extremetech.com/feed';
+            $feed->maxresults = '10';
+            $feed->save();
+            $feed->users()->attach($user);
+        
+            $feed = new Feed;
+            $feed->name = 'JPCFeed';
+            $feed->url = 'http://www.jerrypournelle.com/chaosmanor/feed/';
+            $feed->maxresults = '10';
+            $feed->save();
+            $feed->users()->attach($user);
+        
+            $feed = new Feed;
+            $feed->name = 'LJBFeed';
+            $feed->url = 'http://feeds.feedburner.com/LinuxJournalBlogs';
+            $feed->maxresults = '10';
+            $feed->save();
+            $feed->users()->attach($user);
 
         }   
     }
